@@ -1,0 +1,37 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        jcenter()
+        mavenCentral()
+    }
+}
+
+plugins {
+    id 'me.champeau.gradle.jmh' version '0.3.0'
+}
+
+repositories {
+    mavenLocal()
+    jcenter()
+    mavenCentral()
+}
+
+apply plugin: 'me.champeau.gradle.jmh'
+apply plugin: 'java'
+
+group 'io.jumpco.demo'
+version '1.0-SNAPSHOT'
+
+
+compileJava {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}
+
+jmh {
+    include ='io.jumpco.demos.comparefp.FixBuzzBenchmark.*'
+    verbosity = 'NORMAL'
+    benchmarkMode = 'Throughput'
+    iterations = 5
+}
+
