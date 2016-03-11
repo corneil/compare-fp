@@ -42,3 +42,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'org.scala-lang:scala-library:2.11.1'
 }
+
+defaultTasks 'check', 'jmh'
