@@ -1,5 +1,6 @@
 package com.gitbub.corneil.comparefp;
 
+import com.github.corneil.comparefp.FizzBuzzScala;
 import org.junit.Test;
 
 import java.io.PrintWriter;
@@ -7,9 +8,6 @@ import java.io.StringWriter;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by Corneil on 2016/03/11.
- */
 public class FizzBuzzTest {
     @Test
     public void testFunctionalStreams() {
@@ -27,7 +25,24 @@ public class FizzBuzzTest {
         writer.flush();
         verifyOutput(output.toString());
     }
+    @Test
+    public void testScalaImperative() {
+        StringWriter output = new StringWriter();
+        PrintWriter writer = new PrintWriter(output);
+        FizzBuzzScala.imperative(writer);
+        writer.flush();
+        verifyOutput(output.toString());
+    }
+    @Test
+    public void testScalaFunctional() {
+        StringWriter output = new StringWriter();
+        PrintWriter writer = new PrintWriter(output);
+        FizzBuzzScala.functional(writer);
+        writer.flush();
+        verifyOutput(output.toString());
+    }
     private void verifyOutput(String result) {
+        assertFalse(result.contains("0" + System.lineSeparator() + "1" + System.lineSeparator()));
         assertFalse(result.contains("BuzzFizz"));
         assertTrue(result.contains("Fizz"));
         assertTrue(result.contains("FizzBuzz"));

@@ -18,6 +18,7 @@ repositories {
 
 apply plugin: 'me.champeau.gradle.jmh'
 apply plugin: 'java'
+apply plugin: 'scala'
 
 group 'io.jumpco.demo'
 version '1.0-SNAPSHOT'
@@ -31,11 +32,13 @@ jmh {
     include ='com.gitbub.corneil.comparefp.FixBuzzBenchmark.*'
     verbosity = 'NORMAL'
     benchmarkMode = 'Throughput'
-    iterations = 5
+    warmupIterations = 10
+    iterations = 10
     threads = 1
     fork = 5
 }
 
 dependencies {
     testCompile 'junit:junit:4.12'
+    compile 'org.scala-lang:scala-library:2.11.1'
 }

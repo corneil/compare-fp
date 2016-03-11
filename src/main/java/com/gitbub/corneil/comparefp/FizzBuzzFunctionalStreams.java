@@ -35,7 +35,7 @@ public class FizzBuzzFunctionalStreams {
         return replace(i, fizzAndOrBuzz);
     }
     public static void functionalStreams(final PrintWriter writer) {
-        IntStream.range(0, 100)
+        IntStream.range(1, 100)
                  .mapToObj(FizzBuzzFunctionalStreams::fizzBuzz)
                  .forEach(writer::println);
     }

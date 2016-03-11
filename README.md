@@ -16,12 +16,21 @@ The numbers on Intel Core<sup>TM</sup> i7 2.5Ghz
 
 |Benchmark | Mode | Cnt | Score|Error|Units|
 |----------|------|----:|-----:|----:|-----|
-|FixBuzzBenchmark.testFunctional|thrpt|50|61090.872| ± 1798.539 | ops/s|
-|FixBuzzBenchmark.testImperative|thrpt|50|182779.152| ± 3148.576 | ops/s|
+|FixBuzzBenchmark.testFunctional     |thrpt|50|  61090.872 | ± 1798.539 | ops/s|
+|FixBuzzBenchmark.testImperative     |thrpt|50| 182779.152 | ± 3148.576 | ops/s|
 
 After using the `NullPrintWriter` in the benchmark.
 
 |Benchmark | Mode | Cnt | Score|Error|Units|
 |----------|------|----:|-----:|----:|-----|
-|FixBuzzBenchmark.testFunctional|thrpt|25|78407.583 | ± 3516.310 | ops/s|
-|FixBuzzBenchmark.testImperative|thrpt|25|3023374.318| ± 94278.341 | ops/s|
+|FixBuzzBenchmark.testFunctional     |thrpt|25|  78407.583 | ±  3516.310 | ops/s|
+|FixBuzzBenchmark.testImperative     |thrpt|25|3023374.318 | ± 94278.341 | ops/s|
+
+Added Scala versions.
+
+|Benchmark | Mode | Cnt | Score|Error|Units|
+|----------|------|----:|-----:|----:|-----|
+|FixBuzzBenchmark.testFunctional     |thrpt|50|   76830.751 | ±   2935.226| ops/s|
+|FixBuzzBenchmark.testImperative     |thrpt|50| 2940746.768 | ± 113914.095| ops/s|
+|FixBuzzBenchmark.testScalaFunctional|thrpt|50|  125594.655 | ±   5782.021| ops/s|
+|FixBuzzBenchmark.testScalaImperative|thrpt|50| 2220432.836 | ±  88629.517| ops/s|

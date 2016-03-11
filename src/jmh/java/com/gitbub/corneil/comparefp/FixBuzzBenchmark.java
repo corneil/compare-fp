@@ -1,11 +1,11 @@
 package com.gitbub.corneil.comparefp;
 
+import com.github.corneil.comparefp.FizzBuzzScala;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.State;
 
 import java.io.PrintWriter;
-import java.io.StringWriter;
 
 @State(value = Scope.Benchmark)
 public class FixBuzzBenchmark {
@@ -18,5 +18,15 @@ public class FixBuzzBenchmark {
     public void testFunctional() {
         PrintWriter blackhole = new NullPrintWriter();
         FizzBuzzFunctionalStreams.functionalStreams(blackhole);
+    }
+    @Benchmark
+    public void testScalaImperative() {
+        PrintWriter blackhole = new NullPrintWriter();
+        FizzBuzzScala.imperative(blackhole);
+    }
+    @Benchmark
+    public void testScalaFunctional() {
+        PrintWriter blackhole = new NullPrintWriter();
+        FizzBuzzScala.functional(blackhole);
     }
 }
