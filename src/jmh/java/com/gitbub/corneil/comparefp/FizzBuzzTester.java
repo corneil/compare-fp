@@ -1,4 +1,4 @@
-package io.jumpco.demos.comparefp;
+package com.gitbub.corneil.comparefp;
 
 import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;

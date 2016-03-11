@@ -1,10 +1,10 @@
-package io.jumpco.demos.comparefp;
+package com.gitbub.corneil.comparefp;
 
+import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class FizzBuzzFunctionalStreams {
@@ -21,12 +21,9 @@ public class FizzBuzzFunctionalStreams {
     }
 
     static List<Replacement> fizzAndOrBuzz =
-            Collections.unmodifiableList(
-                Arrays.asList(
+            Collections.unmodifiableList(Arrays.asList(
                     new Replacement(divisibleBy(3), "Fizz"),
-                    new Replacement(divisibleBy(5), "Buzz")
-                )
-            );
+                    new Replacement(divisibleBy(5), "Buzz")));
     static String replace(final Integer i, final List<Replacement> rules) {
         return rules.stream()
                     .filter(replacement -> replacement.when.test(i))
@@ -37,9 +34,9 @@ public class FizzBuzzFunctionalStreams {
     static String fizzBuzz(final Integer i) {
         return replace(i, fizzAndOrBuzz);
     }
-    public static List<String> functionalStreams(int max) {
-        return IntStream.range(0, max)
-                        .mapToObj(FizzBuzzFunctionalStreams::fizzBuzz)
-                        .collect(Collectors.toList());
+    public static void functionalStreams(final PrintWriter writer) {
+        IntStream.range(0, 100)
+                 .mapToObj(FizzBuzzFunctionalStreams::fizzBuzz)
+                 .forEach(writer::println);
     }
 }

@@ -35,3 +35,6 @@ jmh {
     iterations = 5
 }
 
+dependencies {
+    testCompile 'junit:junit:4.12'
+}
