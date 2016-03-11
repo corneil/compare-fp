@@ -23,16 +23,17 @@ group 'io.jumpco.demo'
 version '1.0-SNAPSHOT'
 
 
-compileJava {
-    sourceCompatibility = 1.8
-    targetCompatibility = 1.8
-}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
 
 jmh {
     include ='com.gitbub.corneil.comparefp.FixBuzzBenchmark.*'
     verbosity = 'NORMAL'
     benchmarkMode = 'Throughput'
     iterations = 5
+    threads = 1
+    fork = 5
 }
 
 dependencies {

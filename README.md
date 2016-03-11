@@ -18,3 +18,10 @@ The numbers on Intel Core<sup>TM</sup> i7 2.5Ghz
 |----------|------|----:|-----:|----:|-----|
 |FixBuzzBenchmark.testFunctional|thrpt|50|61090.872| ± 1798.539 | ops/s|
 |FixBuzzBenchmark.testImperative|thrpt|50|182779.152| ± 3148.576 | ops/s|
+
+After using the `NullPrintWriter` in the benchmark.
+
+|Benchmark | Mode | Cnt | Score|Error|Units|
+|----------|------|----:|-----:|----:|-----|
+|FixBuzzBenchmark.testFunctional|thrpt|25|78407.583 | ± 3516.310 | ops/s|
+|FixBuzzBenchmark.testImperative|thrpt|25|3023374.318| ± 94278.341 | ops/s|

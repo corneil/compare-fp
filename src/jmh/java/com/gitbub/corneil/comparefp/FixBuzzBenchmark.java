@@ -11,14 +11,12 @@ import java.io.StringWriter;
 public class FixBuzzBenchmark {
     @Benchmark
     public void testImperative() {
-        StringWriter out = new StringWriter();
-        PrintWriter blackhole = new PrintWriter(out);
+        PrintWriter blackhole = new NullPrintWriter();
         FizzBuzzImperative.imperative(blackhole);
     }
     @Benchmark
     public void testFunctional() {
-        StringWriter out = new StringWriter();
-        PrintWriter blackhole = new PrintWriter(out);
+        PrintWriter blackhole = new NullPrintWriter();
         FizzBuzzFunctionalStreams.functionalStreams(blackhole);
     }
 }
