@@ -10,3 +10,11 @@ Java 8 streams to solve the classic FizzBuzz problem.
 Here is a little project to compare the performance of imperative and functional programming.
 
 The [jmh gradle plugin](https://github.com/melix/jmh-gradle-plugin) was a great discovery.
+
+
+The numbers on Intel Core<sup>TM</sup> i7 2.5Ghz
+
+|Benchmark | Mode | Cnt | Score|Error|Units|
+|----------|------|----:|-----:|----:|-----|
+|FixBuzzBenchmark.testFunctional|thrpt|50|61090.872| ± 1798.539 | ops/s|
+|FixBuzzBenchmark.testImperative|thrpt|50|182779.152| ± 3148.576 | ops/s|

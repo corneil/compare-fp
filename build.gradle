@@ -29,7 +29,7 @@ compileJava {
 }
 
 jmh {
-    include ='io.jumpco.demos.comparefp.FixBuzzBenchmark.*'
+    include ='com.gitbub.corneil.comparefp.FixBuzzBenchmark.*'
     verbosity = 'NORMAL'
     benchmarkMode = 'Throughput'
     iterations = 5
