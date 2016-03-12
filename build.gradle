@@ -19,6 +19,7 @@ repositories {
 apply plugin: 'me.champeau.gradle.jmh'
 apply plugin: 'java'
 apply plugin: 'scala'
+apply plugin: 'groovy'
 
 group 'io.jumpco.demo'
 version '1.0-SNAPSHOT'
@@ -29,18 +30,21 @@ targetCompatibility = 1.8
 
 
 jmh {
-    include ='com.gitbub.corneil.comparefp.FixBuzzBenchmark.*'
-    verbosity = 'NORMAL'
+    include ='com.gitbub.corneil.comparefp.*'
+    verbosity = 'EXTRA'
     benchmarkMode = 'Throughput'
     warmupIterations = 10
     iterations = 10
-    threads = 1
+    threads = 2
     fork = 5
 }
 
 dependencies {
     testCompile 'junit:junit:4.12'
     compile 'org.scala-lang:scala-library:2.11.7'
+    compile 'org.codehaus.groovy:groovy-all:2.4.6'
+    // jmh 'org.openjdk.jmh:jmh-generator-annprocess:1.11.3'
+    jmh 'org.openjdk.jmh:jmh-generator-reflection:1.11.3'
 }
 
 defaultTasks 'check', 'jmh'
