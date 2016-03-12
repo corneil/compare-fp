@@ -12,19 +12,21 @@ object FizzBuzzScala {
 
   val modulusCheck = (i: Int, div: Int) => i % div == 0
   val fizzAndOrBuzz = List(
+    Replacement(modulusCheck(_: Int, 15), "FizzBuzz"),
     Replacement(modulusCheck(_: Int, 3), "Fizz"),
     Replacement(modulusCheck(_: Int, 5), "Buzz")
   )
 
   private def replace(i: Int, rules: List[Replacement]): String = {
-    rules.filter(r => r.when(i)) match {
-      case Nil => i.toString
-      case r => r.map(r => r.output)
-        .reduce((a: String, b: String) => a.concat(b))
+    rules.find(r => r.when(i)) match {
+      case Some(r) => r.output
+      case None => i.toString
     }
   }
 
   def functional(writer: PrintWriter): Unit = {
-    (1 until 101).map(i => replace(i, fizzAndOrBuzz)).foreach(i => writer.println(i))
+    for (i <- 1 to 100) {
+      writer.println(replace(i, fizzAndOrBuzz))
+    }
   }
 }

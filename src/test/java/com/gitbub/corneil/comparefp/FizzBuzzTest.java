@@ -1,5 +1,7 @@
 package com.gitbub.corneil.comparefp;
 
+import com.github.corneil.comparefp.FizzBuzzGroovy;
+import com.github.corneil.comparefp.FizzBuzzGroovyFunctional;
 import com.github.corneil.comparefp.FizzBuzzScala;
 import com.github.corneil.comparefp.FizzBuzzScalaImperative;
 import org.junit.Test;
@@ -11,18 +13,42 @@ import static org.junit.Assert.*;
 
 public class FizzBuzzTest {
     @Test
-    public void testFunctionalStreams() {
+    public void testJavaFunctionalMapReduce() {
         StringWriter output = new StringWriter();
         PrintWriter writer = new PrintWriter(output);
-        FizzBuzzFunctionalStreams.functionalStreams(writer);
+        FizzBuzzFunctionalMapReduce.functionalMapReduce(writer);
         writer.flush();
         verifyOutput(output.toString());
     }
     @Test
-    public void testImperative() {
+    public void testJavaFunctional() {
+        StringWriter output = new StringWriter();
+        PrintWriter writer = new PrintWriter(output);
+        FizzBuzzFunctional.functional(writer);
+        writer.flush();
+        verifyOutput(output.toString());
+    }
+    @Test
+    public void testJavaImperative() {
         StringWriter output = new StringWriter();
         PrintWriter writer = new PrintWriter(output);
         FizzBuzzImperative.imperative(writer);
+        writer.flush();
+        verifyOutput(output.toString());
+    }
+    @Test
+    public void testGroovyImperative() {
+        StringWriter output = new StringWriter();
+        PrintWriter writer = new PrintWriter(output);
+        FizzBuzzGroovy.imperative(writer);
+        writer.flush();
+        verifyOutput(output.toString());
+    }
+    @Test
+    public void testGroovyFunctional() {
+        StringWriter output = new StringWriter();
+        PrintWriter writer = new PrintWriter(output);
+        FizzBuzzGroovyFunctional.functional(writer);
         writer.flush();
         verifyOutput(output.toString());
     }

@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.IntStream;
 
-public class FizzBuzzFunctionalStreams {
+public class FizzBuzzFunctionalMapReduce {
     static Predicate<Integer> divisibleBy(Integer div) {
         return (i) -> i % div == 0;
     }
@@ -34,9 +34,9 @@ public class FizzBuzzFunctionalStreams {
     static String fizzBuzz(final Integer i) {
         return replace(i, fizzAndOrBuzz);
     }
-    public static void functionalStreams(final PrintWriter writer) {
+    public static void functionalMapReduce(final PrintWriter writer) {
         IntStream.range(1, 101)
-                 .mapToObj(FizzBuzzFunctionalStreams::fizzBuzz)
+                 .mapToObj(FizzBuzzFunctionalMapReduce::fizzBuzz)
                  .forEach( (i) -> writer.println(i));
     }
 }

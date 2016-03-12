@@ -8,6 +8,7 @@ import java.io.PrintWriter
 class FizzBuzzScalaImperative {
 
 }
+
 object FizzBuzzScalaImperative {
   def imperative(writer: PrintWriter): Unit = {
     for (i <- 1 to 100) {
@@ -19,5 +20,4 @@ object FizzBuzzScalaImperative {
       }
     }
   }
-
 }
