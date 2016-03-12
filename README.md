@@ -26,18 +26,10 @@ After using the `NullPrintWriter` in the benchmark.
 |FixBuzzBenchmark.testFunctional     | thrpt | 25 |   78407.583 | ±  3516.310 | ops/s|
 |FixBuzzBenchmark.testImperative     | thrpt | 25 | 3023374.318 | ± 94278.341 | ops/s|
 
-Added Scala versions.
-
-|Benchmark | Mode | Cnt | Score|Error|Units|
-|----------|------|----:|-----:|----:|-----|
-|FixBuzzBenchmark.testFunctional     | thrpt | 50 |   76830.751 | ±   2935.226| ops/s|
-|FixBuzzBenchmark.testImperative     | thrpt | 50 | 2940746.768 | ± 113914.095| ops/s|
-|FixBuzzBenchmark.testScalaFunctional| thrpt | 50 |  125594.655 | ±   5782.021| ops/s|
-|FixBuzzBenchmark.testScalaImperative| thrpt | 50 | 2220432.836 | ±  88629.517| ops/s|
-
-Added Groovy Version.
-Created Java functional that doesn't perform map/reduce.
-Refactored Scala version to similar functional without map/reduce.
+* Added Scala versions.
+* Added Groovy Version.
+* Created Java functional that doesn't perform map/reduce.
+* Refactored Scala version to similar functional without map/reduce.
 
 |Benchmark | Mode | Cnt | Score|Error|Units|
 |----------|------|----:|-----:|----:|-----|
@@ -48,9 +40,3 @@ Refactored Scala version to similar functional without map/reduce.
 |FixBuzzBenchmark.testJavaImperative        | thrpt |  50 | 3060987.580 | ±  65957.279 | ops/s |
 |FixBuzzBenchmark.testScalaFunctional       | thrpt |  50 |  236289.522 | ±   5524.769 | ops/s |
 |FixBuzzBenchmark.testScalaImperative       | thrpt |  50 | 2382500.827 | ±  52939.858 | ops/s |
-
-
-
-
-
-
