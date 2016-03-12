@@ -35,7 +35,7 @@ jmh {
     benchmarkMode = 'Throughput'
     warmupIterations = 10
     iterations = 10
-    threads = 2
+    threads = 1
     fork = 5
 }
 
