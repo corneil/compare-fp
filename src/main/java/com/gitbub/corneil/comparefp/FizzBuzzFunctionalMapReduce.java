@@ -23,7 +23,8 @@ public class FizzBuzzFunctionalMapReduce {
     static List<Replacement> fizzAndOrBuzz =
             Collections.unmodifiableList(Arrays.asList(
                     new Replacement(divisibleBy(3), "Fizz"),
-                    new Replacement(divisibleBy(5), "Buzz")));
+                    new Replacement(divisibleBy(5), "Buzz"))
+            );
     static String replace(final Integer i, final List<Replacement> rules) {
         return rules.stream()
                     .filter(replacement -> replacement.when.test(i))
@@ -34,6 +35,7 @@ public class FizzBuzzFunctionalMapReduce {
     static String fizzBuzz(final Integer i) {
         return replace(i, fizzAndOrBuzz);
     }
+
     public static void functionalMapReduce(final PrintWriter writer) {
         IntStream.range(1, 101)
                  .mapToObj(FizzBuzzFunctionalMapReduce::fizzBuzz)

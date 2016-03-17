@@ -11,7 +11,24 @@ import java.io.StringWriter;
 
 import static org.junit.Assert.*;
 
+
 public class FizzBuzzTest {
+    @Test
+    public void testKotlinImperative() {
+        StringWriter output = new StringWriter();
+        PrintWriter writer = new PrintWriter(output);
+        FizzBuzzKotlinImperative.imperative(writer);
+        writer.flush();
+        verifyOutput(output.toString());
+    }
+    @Test
+    public void testKotlinFunctional() {
+        StringWriter output = new StringWriter();
+        PrintWriter writer = new PrintWriter(output);
+        FizzBuzzKotlinFunctional.functional(writer);
+        writer.flush();
+        verifyOutput(output.toString());
+    }
     @Test
     public void testJavaFunctionalMapReduce() {
         StringWriter output = new StringWriter();

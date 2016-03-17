@@ -13,19 +13,9 @@ import java.io.PrintWriter;
 @State(value = Scope.Thread)
 public class FixBuzzBenchmark {
     @Benchmark
-    public void testJavaImperative() {
+    public void testGroovyFunctional() {
         PrintWriter blackhole = new NullPrintWriter();
-        FizzBuzzImperative.imperative(blackhole);
-    }
-    @Benchmark
-    public void testJavaFunctionalStreams() {
-        PrintWriter blackhole = new NullPrintWriter();
-        FizzBuzzFunctionalMapReduce.functionalMapReduce(blackhole);
-    }
-    @Benchmark
-    public void testJavaFunctional() {
-        PrintWriter blackhole = new NullPrintWriter();
-        FizzBuzzFunctional.functional(blackhole);
+        FizzBuzzGroovyFunctional.functional(blackhole);
     }
     @Benchmark
     public void testGroovyImperative() {
@@ -33,18 +23,38 @@ public class FixBuzzBenchmark {
         FizzBuzzGroovy.imperative(blackhole);
     }
     @Benchmark
-    public void testGroovyFunctional() {
+    public void testJavaFunctional() {
         PrintWriter blackhole = new NullPrintWriter();
-        FizzBuzzGroovyFunctional.functional(blackhole);
+        FizzBuzzFunctional.functional(blackhole);
     }
     @Benchmark
-    public void testScalaImperative() {
+    public void testJavaFunctionalStreams() {
         PrintWriter blackhole = new NullPrintWriter();
-        FizzBuzzScalaImperative.imperative(blackhole);
+        FizzBuzzFunctionalMapReduce.functionalMapReduce(blackhole);
+    }
+    @Benchmark
+    public void testJavaImperative() {
+        PrintWriter blackhole = new NullPrintWriter();
+        FizzBuzzImperative.imperative(blackhole);
+    }
+    @Benchmark
+    public void testKotlinFunctional() {
+        PrintWriter blackhole = new NullPrintWriter();
+        FizzBuzzKotlinFunctional.functional(blackhole);
+    }
+    @Benchmark
+    public void testKotlinImperative() {
+        PrintWriter blackhole = new NullPrintWriter();
+        FizzBuzzKotlinImperative.imperative(blackhole);
     }
     @Benchmark
     public void testScalaFunctional() {
         PrintWriter blackhole = new NullPrintWriter();
         FizzBuzzScala.functional(blackhole);
+    }
+    @Benchmark
+    public void testScalaImperative() {
+        PrintWriter blackhole = new NullPrintWriter();
+        FizzBuzzScalaImperative.imperative(blackhole);
     }
 }

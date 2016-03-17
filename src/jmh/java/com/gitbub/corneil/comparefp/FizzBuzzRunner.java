@@ -10,7 +10,7 @@ public class FizzBuzzRunner {
     public static void main(String[] args) throws RunnerException {
         System.setProperty("jmh.ignoreLock", "true");
         Options opt = new OptionsBuilder()
-                    .include(".*" + FixBuzzBenchmark.class.getSimpleName() + "\\.testGroovyImperative.*")
+                    .include(".*" + FixBuzzBenchmark.class.getSimpleName() + ".*")
                     .verbosity(VerboseMode.EXTRA)
                     .warmupIterations(10)
                     .measurementIterations(10)
