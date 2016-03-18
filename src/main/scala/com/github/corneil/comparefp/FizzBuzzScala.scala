@@ -30,3 +30,15 @@ object FizzBuzzScala {
     }
   }
 }
+
+object FizzBuzzScalaStreams {
+  val nones = Stream.continually(None)
+  val fizzes: Stream[Option[String]] = nones.take(2) ++ Some("Fizz") #:: fizzes
+  val buzzes: Stream[Option[String]] = nones.take(4) ++ Some("Buzz") #:: buzzes
+
+  def functional(writer: PrintWriter): Unit = {
+    for (((fizz, buzz), n) <- fizzes zip buzzes zip (1 to 100)) {
+      writer.println(fizz.map(_ + buzz.getOrElse("")).orElse(buzz).getOrElse(n))
+    }
+  }
+}

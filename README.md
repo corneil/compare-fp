@@ -32,6 +32,7 @@ After using the `NullPrintWriter` in the benchmark.
 * Created Java functional that doesn't perform map/reduce.
 * Refactored Scala version to similar functional without map/reduce.
 * Added [Kotlin](https://kotlinlang.org) versions
+* Added Scala Streams after [Guillaume Belrose](https://twitter.com/gbelrose) linked to [https://gist.github.com/samklr/6098769](https://gist.github.com/samklr/6098769)
 
 ## Groovy Results
 |Benchmark | Mode | Cnt | Score|Error|Units|
@@ -51,6 +52,7 @@ After using the `NullPrintWriter` in the benchmark.
 |----------|------|----:|-----:|----:|-----|
 |FixBuzzBenchmark.testScalaFunctional       | thrpt |  50 |  236289.522 | ±   5524.769 | ops/s |
 |FixBuzzBenchmark.testScalaImperative       | thrpt |  50 | 2382500.827 | ±  52939.858 | ops/s |
+|FixBuzzBenchmark.testScalaFunctionalStreams| thrpt |  50 |   53616.274 | ±   1780.626 | ops/s |
 
 ## Kotlin Results.
 |Benchmark | Mode | Cnt | Score|Error|Units|
