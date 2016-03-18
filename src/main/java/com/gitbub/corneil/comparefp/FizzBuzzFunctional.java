@@ -18,18 +18,14 @@ public class FizzBuzzFunctional {
     }
     static final List<Replacement> fizzAndOrBuzz =
             Collections.unmodifiableList(Arrays.asList(
-                    new Replacement(divisibleBy(15), "FizzBuzz"),
-                    new Replacement(divisibleBy(3), "Fizz"),
-                    new Replacement(divisibleBy(5), "Buzz"))
-            );
-    static Predicate<Integer> divisibleBy(Integer div) {
-        return (i) -> i % div == 0;
-    }
+                    new Replacement(i -> i % 15 == 0, "FizzBuzz"),
+                    new Replacement(i -> i % 3 == 0, "Fizz"),
+                    new Replacement(i -> i % 5 == 0, "Buzz")
+            ));
 
     static String replace(final Integer i, final List<Replacement> rules) {
-        final Optional<Replacement>
-                replacement =
-                rules.stream().filter(r -> r.when.test(i)).findFirst();
+        final Optional<Replacement> replacement = rules.stream()
+                                               .filter(r -> r.when.test(i)).findFirst();
         return replacement.isPresent() ? replacement.get().output : i.toString();
     }
 

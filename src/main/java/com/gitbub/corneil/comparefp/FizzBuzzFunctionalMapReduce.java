@@ -8,9 +8,6 @@ import java.util.function.Predicate;
 import java.util.stream.IntStream;
 
 public class FizzBuzzFunctionalMapReduce {
-    static Predicate<Integer> divisibleBy(Integer div) {
-        return (i) -> i % div == 0;
-    }
     static class Replacement {
         final Predicate<Integer> when;
         final String output;
@@ -22,23 +19,22 @@ public class FizzBuzzFunctionalMapReduce {
 
     static List<Replacement> fizzAndOrBuzz =
             Collections.unmodifiableList(Arrays.asList(
-                    new Replacement(divisibleBy(3), "Fizz"),
-                    new Replacement(divisibleBy(5), "Buzz"))
-            );
+                    new Replacement(i -> i % 3 == 0, "Fizz"),
+                    new Replacement(i -> i % 5 == 0, "Buzz")
+            ));
     static String replace(final Integer i, final List<Replacement> rules) {
         return rules.stream()
-                    .filter(replacement -> replacement.when.test(i))
-                    .map(replacement -> replacement.output)
+                    .filter(r -> r.when.test(i))
+                    .map(r -> r.output)
                     .reduce(String::concat)
                     .orElse(Integer.toString(i));
     }
     static String fizzBuzz(final Integer i) {
         return replace(i, fizzAndOrBuzz);
     }
-
     public static void functionalMapReduce(final PrintWriter writer) {
         IntStream.range(1, 101)
                  .mapToObj(FizzBuzzFunctionalMapReduce::fizzBuzz)
-                 .forEach( (i) -> writer.println(i));
+                 .forEach((i) -> writer.println(i));
     }
 }

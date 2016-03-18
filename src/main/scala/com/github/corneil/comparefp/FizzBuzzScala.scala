@@ -12,9 +12,9 @@ object FizzBuzzScala {
 
   val modulusCheck = (i: Int, div: Int) => i % div == 0
   val fizzAndOrBuzz = List(
-    Replacement(modulusCheck(_: Int, 15), "FizzBuzz"),
-    Replacement(modulusCheck(_: Int, 3), "Fizz"),
-    Replacement(modulusCheck(_: Int, 5), "Buzz")
+    Replacement(i => i % 15 == 0, "FizzBuzz"),
+    Replacement(i => i % 3 == 0, "Fizz"),
+    Replacement(i => i % 5 == 0, "Buzz")
   )
 
   private def replace(i: Int, rules: List[Replacement]): String = {

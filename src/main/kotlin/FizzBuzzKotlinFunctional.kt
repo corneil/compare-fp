@@ -17,7 +17,7 @@ class FizzBuzzKotlinFunctional {
         )
 
         fun replace(i: Int, replacements: List<Replacement>): String {
-            val result: Replacement? = replacements.firstOrNull { replacement -> replacement.rule(i) }
+            val result: Replacement? = replacements.firstOrNull { r -> r.rule(i) }
             return result?.output ?: i.toString()
         }
 

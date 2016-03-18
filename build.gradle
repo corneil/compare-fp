@@ -36,12 +36,12 @@ targetCompatibility = 1.8
 
 jmh {
     include ='com.gitbub.corneil.comparefp.*'
-    verbosity = 'EXTRA'
+    verbosity = 'NORMAL'
     benchmarkMode = 'Throughput'
-    warmupIterations = 10
-    iterations = 10
+    warmupIterations = 5
+    iterations = 5
     threads = 1
-    fork = 5
+    fork = 3
 }
 
 dependencies {
@@ -50,7 +50,6 @@ dependencies {
     compile 'org.codehaus.groovy:groovy-all:2.4.6'
     compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
     testCompile "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
-    // jmh 'org.openjdk.jmh:jmh-generator-annprocess:1.11.3'
     jmh 'org.openjdk.jmh:jmh-generator-reflection:1.11.3'
 }
 

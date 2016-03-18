@@ -2,11 +2,7 @@ package com.github.corneil.comparefp
 
 import java.io.PrintWriter
 
-/**
-  * Created by Corneil on 2016/03/12.
-  */
 class FizzBuzzScalaImperative {
-
 }
 
 object FizzBuzzScalaImperative {

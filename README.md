@@ -14,18 +14,6 @@ The [jmh gradle plugin](https://github.com/melix/jmh-gradle-plugin) was a great 
 
 The numbers on Intel Core<sup>TM</sup> i7 2.5Ghz
 
-|Benchmark | Mode | Cnt | Score|Error|Units|
-|----------|------|----:|-----:|----:|-----|
-| FixBuzzBenchmark.testFunctional     | thrpt | 50 |  61090.872 | ±  1798.539 | ops/s|
-| FixBuzzBenchmark.testImperative     | thrpt | 50 | 182779.152 | ±  3148.576 | ops/s|
-
-After using the `NullPrintWriter` in the benchmark.
-
-|Benchmark | Mode | Cnt | Score|Error|Units|
-|----------|------|----:|-----:|----:|-----|
-|FixBuzzBenchmark.testFunctional     | thrpt | 25 |   78407.583 | ±  3516.310 | ops/s|
-|FixBuzzBenchmark.testImperative     | thrpt | 25 | 3023374.318 | ± 94278.341 | ops/s|
-
 ## Changelog
 * Added [Scala](http://www.scala-lang.org) versions.
 * Added [Groovy](http://www.groovy-lang.org) versions.
@@ -33,29 +21,31 @@ After using the `NullPrintWriter` in the benchmark.
 * Refactored Scala version to similar functional without map/reduce.
 * Added [Kotlin](https://kotlinlang.org) versions
 * Added Scala Streams after [Guillaume Belrose](https://twitter.com/gbelrose) linked to [https://gist.github.com/samklr/6098769](https://gist.github.com/samklr/6098769)
+* Refactored Java and Scala Predicates to inline lambdas instead of static methods. No significant difference in performance.
 
 ## Groovy Results
-|Benchmark | Mode | Cnt | Score|Error|Units|
-|----------|------|----:|-----:|----:|-----|
-|FixBuzzBenchmark.testGroovyFunctional      | thrpt |  50 |   11903.295 | ±    269.842 | ops/s |
-|FixBuzzBenchmark.testGroovyImperative      | thrpt |  50 | 2965120.814 | ± 110144.919 | ops/s |
+|Benchmark | Mode | Score|Error|Units|
+|----------|------|-----:|----:|-----|
+|FixBuzzBenchmark.testGroovyImperative       | thrpt |  3050891.492| ± 216981.853 | ops/s|
+|FixBuzzBenchmark.testGroovyFunctional       | thrpt |    11253.501| ±    851.912 | ops/s|
 
 ## Java Results
-|Benchmark | Mode | Cnt | Score|Error|Units|
-|----------|------|----:|-----:|----:|-----|
-|FixBuzzBenchmark.testJavaFunctional        | thrpt |  50 |  110031.245 | ±   2845.457 | ops/s |
-|FixBuzzBenchmark.testJavaFunctionalStreams | thrpt |  50 |   78164.119 | ±   2859.085 | ops/s |
-|FixBuzzBenchmark.testJavaImperative        | thrpt |  50 | 3060987.580 | ±  65957.279 | ops/s |
+|Benchmark | Mode | Score|Error|Units|
+|----------|------|-----:|----:|-----|
+|FixBuzzBenchmark.testJavaImperative         | thrpt |  3111567.460| ±  74396.877 | ops/s|
+|FixBuzzBenchmark.testJavaFunctional         | thrpt |   102617.823| ±   5923.711 | ops/s|
+|FixBuzzBenchmark.testJavaFunctionalStreams  | thrpt |    81964.718| ±   4424.578 | ops/s|
 
 ## Scala Results
-|Benchmark | Mode | Cnt | Score|Error|Units|
-|----------|------|----:|-----:|----:|-----|
-|FixBuzzBenchmark.testScalaFunctional       | thrpt |  50 |  236289.522 | ±   5524.769 | ops/s |
-|FixBuzzBenchmark.testScalaImperative       | thrpt |  50 | 2382500.827 | ±  52939.858 | ops/s |
-|FixBuzzBenchmark.testScalaFunctionalStreams| thrpt |  50 |   53616.274 | ±   1780.626 | ops/s |
+|Benchmark | Mode | Score|Error|Units|
+|----------|------|-----:|----:|-----|
+|FixBuzzBenchmark.testScalaImperative        | thrpt |  2227947.335| ± 185515.263 | ops/s|
+|FixBuzzBenchmark.testScalaFunctional        | thrpt |   226113.442| ±  16812.806 | ops/s|
+|FixBuzzBenchmark.testScalaFunctionalStreams | thrpt |    51658.673| ±   6061.418 | ops/s|
 
 ## Kotlin Results.
-|Benchmark | Mode | Cnt | Score|Error|Units|
-|----------|------|----:|-----:|----:|-----|
-|FixBuzzBenchmark.testKotlinFunctional      | thrpt |  50 |  188682.710 | ±   4904.750 | ops/s
-|FixBuzzBenchmark.testKotlinImperative      | thrpt |  50 | 2791198.801 | ± 147170.861 | ops/s
+|Benchmark | Mode | Score|Error|Units|
+|----------|------|-----:|----:|-----|
+|FixBuzzBenchmark.testKotlinImperative       | thrpt |  3139184.590| ± 143655.108 | ops/s|
+|FixBuzzBenchmark.testKotlinFunctional       | thrpt |   181961.476| ±  13457.517 | ops/s|
+
