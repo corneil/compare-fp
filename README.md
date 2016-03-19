@@ -22,6 +22,7 @@ The numbers on Intel Core<sup>TM</sup> i7 2.5Ghz
 * Added [Kotlin](https://kotlinlang.org) versions
 * Added Scala Streams after [Guillaume Belrose](https://twitter.com/gbelrose) linked to [https://gist.github.com/samklr/6098769](https://gist.github.com/samklr/6098769)
 * Refactored Java and Scala Predicates to inline lambdas instead of static methods. No significant difference in performance.
+* Added Scalaz version after [Andreas Pauley](https://twitter.com/apauley) linked to [https://gist.github.com/apauley/ca8197f5b9b822097c50](https://gist.github.com/apauley/ca8197f5b9b822097c50) Providing some of the best performance of all the functional versions
 
 ## Groovy Results
 |Benchmark | Mode | Score|Error|Units|
@@ -40,6 +41,7 @@ The numbers on Intel Core<sup>TM</sup> i7 2.5Ghz
 |Benchmark | Mode | Score|Error|Units|
 |----------|------|-----:|----:|-----|
 |FixBuzzBenchmark.testScalaImperative        | thrpt |  2227947.335| ± 185515.263 | ops/s|
+|FixBuzzBenchmark.testScalaZFunctional       | thrpt |   247194.265| ±  17232.884 | ops/s|
 |FixBuzzBenchmark.testScalaFunctional        | thrpt |   226113.442| ±  16812.806 | ops/s|
 |FixBuzzBenchmark.testScalaFunctionalStreams | thrpt |    51658.673| ±   6061.418 | ops/s|
 

@@ -5,6 +5,7 @@ import com.github.corneil.comparefp.FizzBuzzGroovyFunctional;
 import com.github.corneil.comparefp.FizzBuzzScala;
 import com.github.corneil.comparefp.FizzBuzzScalaImperative;
 import com.github.corneil.comparefp.FizzBuzzScalaStreams;
+import com.github.corneil.comparefp.FizzBuzzScalaZ;
 import org.junit.Test;
 
 import java.io.PrintWriter;
@@ -83,6 +84,14 @@ public class FizzBuzzTest {
         StringWriter output = new StringWriter();
         PrintWriter writer = new PrintWriter(output);
         FizzBuzzScala.functional(writer);
+        writer.flush();
+        verifyOutput(output.toString());
+    }
+    @Test
+    public void testScalaZFunctional() {
+        StringWriter output = new StringWriter();
+        PrintWriter writer = new PrintWriter(output);
+        FizzBuzzScalaZ.functional(writer);
         writer.flush();
         verifyOutput(output.toString());
     }

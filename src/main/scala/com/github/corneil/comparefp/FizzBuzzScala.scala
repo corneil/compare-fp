@@ -2,6 +2,9 @@ package com.github.corneil.comparefp
 
 import java.io.PrintWriter
 
+import scalaz.Scalaz._
+import scalaz._
+
 class FizzBuzzScala {
 }
 
@@ -39,6 +42,21 @@ object FizzBuzzScalaStreams {
   def functional(writer: PrintWriter): Unit = {
     for (((fizz, buzz), n) <- fizzes zip buzzes zip (1 to 100)) {
       writer.println(fizz.map(_ + buzz.getOrElse("")).orElse(buzz).getOrElse(n))
+    }
+  }
+}
+
+
+object FizzBuzzScalaZ {
+  def fizz(n: Int): Option[String] = if (n % 3 == 0) some("Fizz") else None
+
+  def buzz(n: Int): Option[String] = if (n % 5 == 0) Some("Buzz") else None
+
+  def fizzbuzz(n: Int): String = (fizz(n) |+| buzz(n)).getOrElse(n.toString)
+
+  def functional(writer: PrintWriter): Unit = {
+    for (n <- 1 to 100) {
+      writer.println(fizzbuzz(n))
     }
   }
 }

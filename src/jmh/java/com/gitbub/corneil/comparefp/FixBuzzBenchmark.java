@@ -5,6 +5,7 @@ import com.github.corneil.comparefp.FizzBuzzGroovyFunctional;
 import com.github.corneil.comparefp.FizzBuzzScala;
 import com.github.corneil.comparefp.FizzBuzzScalaImperative;
 import com.github.corneil.comparefp.FizzBuzzScalaStreams;
+import com.github.corneil.comparefp.FizzBuzzScalaZ;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.State;
@@ -52,6 +53,11 @@ public class FixBuzzBenchmark {
     public void testScalaFunctional() {
         PrintWriter blackhole = new NullPrintWriter();
         FizzBuzzScala.functional(blackhole);
+    }
+    @Benchmark
+    public void testScalaZFunctional() {
+        PrintWriter blackhole = new NullPrintWriter();
+        FizzBuzzScalaZ.functional(blackhole);
     }
     @Benchmark
     public void testScalaFunctionalStreams() {
