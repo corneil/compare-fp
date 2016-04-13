@@ -51,3 +51,6 @@ The numbers on Intel Core<sup>TM</sup> i7 2.5Ghz
 |FixBuzzBenchmark.testKotlinImperative       | thrpt |  3139184.590| ± 143655.108 | ops/s|
 |FixBuzzBenchmark.testKotlinFunctional       | thrpt |   181961.476| ±  13457.517 | ops/s|
 
+
+
+[<img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif">/<img>](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=corneil%2eduplessis%40gmail%2ecom&lc=ZA&item_name=Corneil%20du%20Plessis&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)
