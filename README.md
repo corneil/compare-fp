@@ -27,30 +27,48 @@ The numbers on Intel Core<sup>TM</sup> i7 2.5Ghz
 ## Groovy Results
 |Benchmark | Mode | Score|Error|Units|
 |----------|------|-----:|----:|-----|
-|FixBuzzBenchmark.testGroovyImperative       | thrpt |  3050891.492| ± 216981.853 | ops/s|
-|FixBuzzBenchmark.testGroovyFunctional       | thrpt |    11253.501| ±    851.912 | ops/s|
+|FixBuzzBenchmark.testGroovyImperative       | thrpt |  3457836.966| ±  90226.579 | ops/s|
+|FixBuzzBenchmark.testGroovyFunctional       | thrpt |    13135.388| ±    189.675 | ops/s|
 
 ## Java Results
 |Benchmark | Mode | Score|Error|Units|
 |----------|------|-----:|----:|-----|
-|FixBuzzBenchmark.testJavaImperative         | thrpt |  3111567.460| ±  74396.877 | ops/s|
-|FixBuzzBenchmark.testJavaFunctional         | thrpt |   102617.823| ±   5923.711 | ops/s|
-|FixBuzzBenchmark.testJavaFunctionalStreams  | thrpt |    81964.718| ±   4424.578 | ops/s|
+|FixBuzzBenchmark.testJavaImperative         | thrpt |  3470211.762| ± 160182.652 | ops/s|
+|FixBuzzBenchmark.testJavaFunctional         | thrpt |   124968.783| ±   1586.580 | ops/s|
+|FixBuzzBenchmark.testJavaFunctionalStreams  | thrpt |    85608.047| ±   4151.209 | ops/s|
 
 ## Scala Results
 |Benchmark | Mode | Score|Error|Units|
 |----------|------|-----:|----:|-----|
-|FixBuzzBenchmark.testScalaImperative        | thrpt |  2227947.335| ± 185515.263 | ops/s|
-|FixBuzzBenchmark.testScalaZFunctional       | thrpt |   247194.265| ±  17232.884 | ops/s|
-|FixBuzzBenchmark.testScalaFunctional        | thrpt |   226113.442| ±  16812.806 | ops/s|
-|FixBuzzBenchmark.testScalaFunctionalStreams | thrpt |    51658.673| ±   6061.418 | ops/s|
+|FixBuzzBenchmark.testScalaImperative        | thrpt |  2444048.870| ± 278984.479 | ops/s|
+|FixBuzzBenchmark.testScalaZFunctional       | thrpt |   277517.574| ±  14761.687 | ops/s|
+|FixBuzzBenchmark.testScalaFunctional        | thrpt |   276278.529| ±   9243.597 | ops/s|
+|FixBuzzBenchmark.testScalaFunctionalStreams | thrpt |    47997.627| ±   5331.258 | ops/s|
 
 ## Kotlin Results.
 |Benchmark | Mode | Score|Error|Units|
 |----------|------|-----:|----:|-----|
-|FixBuzzBenchmark.testKotlinImperative       | thrpt |  3139184.590| ± 143655.108 | ops/s|
-|FixBuzzBenchmark.testKotlinFunctional       | thrpt |   181961.476| ±  13457.517 | ops/s|
+|FixBuzzBenchmark.testKotlinImperative       | thrpt |  3405441.229| ± 127977.960 | ops/s|
+|FixBuzzBenchmark.testKotlinFunctional       | thrpt |   266858.603| ±   8704.463 | ops/s|
+
+## Imperative Results.
+|Benchmark | Mode | Score|Error|Units|
+|----------|------|-----:|----:|-----|
+|FixBuzzBenchmark.testJavaImperative         | thrpt |  3470211.762| ± 160182.652 | ops/s|
+|FixBuzzBenchmark.testGroovyImperative       | thrpt |  3457836.966| ±  90226.579 | ops/s|
+|FixBuzzBenchmark.testKotlinImperative       | thrpt |  3405441.229| ± 127977.960 | ops/s|
+|FixBuzzBenchmark.testScalaImperative        | thrpt |  2444048.870| ± 278984.479 | ops/s|
 
 
+## Functional Results.
+|Benchmark | Mode | Score|Error|Units|
+|----------|------|-----:|----:|-----|
+|FixBuzzBenchmark.testScalaZFunctional       | thrpt |   277517.574| ±  14761.687 | ops/s|
+|FixBuzzBenchmark.testScalaFunctional        | thrpt |   276278.529| ±   9243.597 | ops/s|
+|FixBuzzBenchmark.testKotlinFunctional       | thrpt |   266858.603| ±   8704.463 | ops/s|
+|FixBuzzBenchmark.testJavaFunctional         | thrpt |   124968.783| ±   1586.580 | ops/s|
+|FixBuzzBenchmark.testJavaFunctionalStreams  | thrpt |    85608.047| ±   4151.209 | ops/s|
+|FixBuzzBenchmark.testScalaFunctionalStreams | thrpt |    47997.627| ±   5331.258 | ops/s|
+|FixBuzzBenchmark.testGroovyFunctional       | thrpt |    13135.388| ±    189.675 | ops/s|
 
-[<img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif">/<img>](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=corneil%2eduplessis%40gmail%2ecom&lc=ZA&item_name=Corneil%20du%20Plessis&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)
+![<img src="buy-me-coffee.png"></img>](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=corneil%2eduplessis%40gmail%2ecom&lc=ZA&item_name=Corneil%20du%20Plessis&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)

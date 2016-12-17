@@ -1,5 +1,5 @@
 buildscript {
-    ext.kotlin_version = '1.0.0'
+    ext.kotlin_version = '1.0.5-3'
     repositories {
         mavenLocal()
         jcenter()
@@ -11,7 +11,7 @@ buildscript {
 }
 
 plugins {
-    id 'me.champeau.gradle.jmh' version '0.3.0'
+    id 'me.champeau.gradle.jmh' version '0.3.1'
 }
 
 repositories {
@@ -30,14 +30,13 @@ group 'io.jumpco.demo'
 version '1.0-SNAPSHOT'
 
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = JavaVersion.VERSION_1_8
 
 
 jmh {
     include ='com.gitbub.corneil.comparefp.*'
     verbosity = 'NORMAL'
-    benchmarkMode = 'Throughput'
+    benchmarkMode = ['thrpt']
     warmupIterations = 5
     iterations = 5
     threads = 1
@@ -51,7 +50,7 @@ dependencies {
     compile 'org.codehaus.groovy:groovy-all:2.4.6'
     compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
     testCompile "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
-    jmh 'org.openjdk.jmh:jmh-generator-reflection:1.11.3'
+    jmh 'org.openjdk.jmh:jmh-generator-reflection:1.17.3'
 }
 
 defaultTasks 'check', 'jmh'
