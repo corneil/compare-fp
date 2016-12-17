@@ -71,4 +71,4 @@ The numbers on Intel Core<sup>TM</sup> i7 2.5Ghz
 |FixBuzzBenchmark.testScalaFunctionalStreams | thrpt |    47997.627| ±   5331.258 | ops/s|
 |FixBuzzBenchmark.testGroovyFunctional       | thrpt |    13135.388| ±    189.675 | ops/s|
 
-![<img src="buy-me-coffee.png"></img>](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=corneil%2eduplessis%40gmail%2ecom&lc=ZA&item_name=Corneil%20du%20Plessis&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)
+[<img src="https://github.com/corneil/compare-fp/raw/master/buy-me-coffee.png"></img>](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=corneil%2eduplessis%40gmail%2ecom&lc=ZA&item_name=Corneil%20du%20Plessis&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)
