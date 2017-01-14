@@ -1,5 +1,10 @@
-package com.gitbub.corneil.comparefp;
+package com.gitbub.corneil.comparefp.test;
 
+import com.gitbub.corneil.comparefp.FizzBuzzFunctional;
+import com.gitbub.corneil.comparefp.FizzBuzzFunctionalMapReduce;
+import com.gitbub.corneil.comparefp.FizzBuzzImperative;
+import com.gitbub.corneil.comparefp.FizzBuzzKotlinFunctional;
+import com.gitbub.corneil.comparefp.FizzBuzzKotlinImperative;
 import com.github.corneil.comparefp.FizzBuzzGroovy;
 import com.github.corneil.comparefp.FizzBuzzGroovyFunctional;
 import com.github.corneil.comparefp.FizzBuzzScala;

@@ -1,4 +1,4 @@
-package com.gitbub.corneil.comparefp;
+package com.gitbub.corneil.comparefp.jmh;
 
 import java.io.PrintWriter;
 import java.util.Locale;

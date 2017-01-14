@@ -1,4 +1,4 @@
-package com.gitbub.corneil.comparefp;
+package com.gitbub.corneil.comparefp.jmh;
 
 import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
@@ -14,7 +14,7 @@ public class FizzBuzzRunner {
                     .verbosity(VerboseMode.EXTRA)
                     .warmupIterations(10)
                     .measurementIterations(10)
-                    .forks(2)
+                    .forks(1)
                     .threads(1)
                     .build();
         new Runner(opt).run();

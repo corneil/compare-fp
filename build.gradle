@@ -1,12 +1,12 @@
 buildscript {
-    ext.kotlin_version = '1.0.5-3'
+    ext.kotlinVersion = '1.0.6'
     repositories {
         mavenLocal()
         jcenter()
         mavenCentral()
     }
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath group: 'org.jetbrains.kotlin', name: 'kotlin-gradle-plugin', version: kotlinVersion
     }
 }
 
@@ -32,27 +32,31 @@ version '1.0-SNAPSHOT'
 
 sourceCompatibility = JavaVersion.VERSION_1_8
 
+dependencies {
+
+    testCompile 'junit:junit:4.12'
+
+    compile 'org.scala-lang:scala-library:2.11.7'
+    compile 'org.scalaz:scalaz-core_2.11:7.2.1'
+
+    compile 'org.codehaus.groovy:groovy-all:2.4.6'
+
+    compile group: 'org.jetbrains.kotlin', name: 'kotlin-reflect', version: kotlinVersion
+    testCompile group: 'org.jetbrains.kotlin', name: 'kotlin-test', version: kotlinVersion
+
+}
 
 jmh {
-    include ='com.gitbub.corneil.comparefp.*'
-    verbosity = 'NORMAL'
+    duplicateClassesStrategy = 'warn'
+    include ='jmh'
+    verbosity = logger.infoEnabled ? 'EXTRA' : 'NORMAL'
     benchmarkMode = ['thrpt']
     warmupIterations = 5
     iterations = 5
     threads = 1
-    fork = 3
+    fork = 1
+    jmhVersion = '1.15'
 }
 
-dependencies {
-    testCompile 'junit:junit:4.12'
-    compile 'org.scala-lang:scala-library:2.11.7'
-    compile 'org.scalaz:scalaz-core_2.11:7.2.1'
-    compile 'org.codehaus.groovy:groovy-all:2.4.6'
-    compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
-    testCompile "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
-    jmh 'org.openjdk.jmh:jmh-core:1.17.3'
-    jmh 'org.openjdk.jmh:jmh-generator-annprocess:1.17.3'
-    jmh 'org.openjdk.jmh:jmh-generator-reflection:1.17.3'
-}
 
 defaultTasks 'check', 'jmh'
