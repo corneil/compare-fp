@@ -14,6 +14,7 @@ public class FizzBuzzRunner {
                     .verbosity(VerboseMode.EXTRA)
                     .warmupIterations(10)
                     .measurementIterations(10)
+                    .jvmArgsPrepend("-XX:+AggressiveOpts")
                     .forks(1)
                     .threads(1)
                     .build();

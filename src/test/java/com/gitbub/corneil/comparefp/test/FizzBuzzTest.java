@@ -3,12 +3,16 @@ package com.gitbub.corneil.comparefp.test;
 import com.gitbub.corneil.comparefp.FizzBuzzFunctional;
 import com.gitbub.corneil.comparefp.FizzBuzzFunctionalMapReduce;
 import com.gitbub.corneil.comparefp.FizzBuzzImperative;
+import com.gitbub.corneil.comparefp.FizzBuzzImperativeCall;
 import com.gitbub.corneil.comparefp.FizzBuzzKotlinFunctional;
 import com.gitbub.corneil.comparefp.FizzBuzzKotlinImperative;
+import com.gitbub.corneil.comparefp.FizzBuzzKotlinImperativeCall;
 import com.github.corneil.comparefp.FizzBuzzGroovy;
+import com.github.corneil.comparefp.FizzBuzzGroovyCall;
 import com.github.corneil.comparefp.FizzBuzzGroovyFunctional;
 import com.github.corneil.comparefp.FizzBuzzScala;
 import com.github.corneil.comparefp.FizzBuzzScalaImperative;
+import com.github.corneil.comparefp.FizzBuzzScalaImperativeCall;
 import com.github.corneil.comparefp.FizzBuzzScalaStreams;
 import com.github.corneil.comparefp.FizzBuzzScalaZ;
 import org.junit.Test;
@@ -21,10 +25,18 @@ import static org.junit.Assert.*;
 
 public class FizzBuzzTest {
     @Test
-    public void testKotlinImperative() {
+    public void testKotlinImperativeInline() {
         StringWriter output = new StringWriter();
         PrintWriter writer = new PrintWriter(output);
         FizzBuzzKotlinImperative.imperative(writer);
+        writer.flush();
+        verifyOutput(output.toString());
+    }
+    @Test
+    public void testKotlinImperativeCall() {
+        StringWriter output = new StringWriter();
+        PrintWriter writer = new PrintWriter(output);
+        FizzBuzzKotlinImperativeCall.imperative(writer);
         writer.flush();
         verifyOutput(output.toString());
     }
@@ -53,7 +65,7 @@ public class FizzBuzzTest {
         verifyOutput(output.toString());
     }
     @Test
-    public void testJavaImperative() {
+    public void testJavaImperativeInline() {
         StringWriter output = new StringWriter();
         PrintWriter writer = new PrintWriter(output);
         FizzBuzzImperative.imperative(writer);
@@ -61,10 +73,26 @@ public class FizzBuzzTest {
         verifyOutput(output.toString());
     }
     @Test
-    public void testGroovyImperative() {
+    public void testJavaImperativeCall() {
+        StringWriter output = new StringWriter();
+        PrintWriter writer = new PrintWriter(output);
+        FizzBuzzImperativeCall.imperative(writer);
+        writer.flush();
+        verifyOutput(output.toString());
+    }
+    @Test
+    public void testGroovyImperativeInline() {
         StringWriter output = new StringWriter();
         PrintWriter writer = new PrintWriter(output);
         FizzBuzzGroovy.imperative(writer);
+        writer.flush();
+        verifyOutput(output.toString());
+    }
+    @Test
+    public void testGroovyImperativeCall() {
+        StringWriter output = new StringWriter();
+        PrintWriter writer = new PrintWriter(output);
+        FizzBuzzGroovyCall.imperative(writer);
         writer.flush();
         verifyOutput(output.toString());
     }
@@ -77,10 +105,18 @@ public class FizzBuzzTest {
         verifyOutput(output.toString());
     }
     @Test
-    public void testScalaImperative() {
+    public void testScalaImperativeInline() {
         StringWriter output = new StringWriter();
         PrintWriter writer = new PrintWriter(output);
-        FizzBuzzScalaImperative.imperative(writer);
+        FizzBuzzScalaImperative.imperativeInline(writer);
+        writer.flush();
+        verifyOutput(output.toString());
+    }
+    @Test
+    public void testScalaImperativeCall() {
+        StringWriter output = new StringWriter();
+        PrintWriter writer = new PrintWriter(output);
+        FizzBuzzScalaImperativeCall.imperativeCall(writer);
         writer.flush();
         verifyOutput(output.toString());
     }

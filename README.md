@@ -24,40 +24,52 @@ The numbers on Intel Core<sup>TM</sup> i7 2.5Ghz
 * Refactored Java and Scala Predicates to inline lambdas instead of static methods. No significant difference in performance.
 * Added Scalaz version after [Andreas Pauley](https://twitter.com/apauley) linked to [https://gist.github.com/apauley/ca8197f5b9b822097c50](https://gist.github.com/apauley/ca8197f5b9b822097c50) Providing some of the best performance of all the functional versions
 
-## Groovy Results
-|Benchmark | Mode | Score|Error|Units|
-|----------|------|-----:|----:|-----|
-|FixBuzzBenchmark.testGroovyImperative       | thrpt |  3457836.966| ±  90226.579 | ops/s|
-|FixBuzzBenchmark.testGroovyFunctional       | thrpt |    13135.388| ±    189.675 | ops/s|
-
 ## Java Results
 |Benchmark | Mode | Score|Error|Units|
 |----------|------|-----:|----:|-----|
-|FixBuzzBenchmark.testJavaImperative         | thrpt |  3470211.762| ± 160182.652 | ops/s|
-|FixBuzzBenchmark.testJavaFunctional         | thrpt |   124968.783| ±   1586.580 | ops/s|
-|FixBuzzBenchmark.testJavaFunctionalStreams  | thrpt |    85608.047| ±   4151.209 | ops/s|
+|FixBuzzBenchmark.testJavaImperativeInline   | thrpt |  3470211.762| ± 4.5% | ops/s|
+|FixBuzzBenchmark.testJavaImperativeCall     | thrpt |   667866.636| ± 8.0% | ops/s|
+|FixBuzzBenchmark.testJavaFunctional         | thrpt |   124968.783| ± 1.2% | ops/s|
+|FixBuzzBenchmark.testJavaFunctionalMapReduce| thrpt |    85608.047| ± 5.2% | ops/s|
+
+## Groovy Results
+|Benchmark | Mode | Score|Error|Units|
+|----------|------|-----:|----:|-----|
+|FixBuzzBenchmark.testGroovyImperativeInline | thrpt |  3457836.966| ± 2.5% | ops/s|
+|FixBuzzBenchmark.testGroovyImperativeCall   | thrpt |   641418.919| ± 1.8% | ops/s|
+|FixBuzzBenchmark.testGroovyFunctional       | thrpt |    13135.388| ± 1.5% | ops/s|
 
 ## Scala Results
 |Benchmark | Mode | Score|Error|Units|
 |----------|------|-----:|----:|-----|
-|FixBuzzBenchmark.testScalaImperative        | thrpt |  2444048.870| ± 278984.479 | ops/s|
-|FixBuzzBenchmark.testScalaZFunctional       | thrpt |   277517.574| ±  14761.687 | ops/s|
-|FixBuzzBenchmark.testScalaFunctional        | thrpt |   276278.529| ±   9243.597 | ops/s|
-|FixBuzzBenchmark.testScalaFunctionalStreams | thrpt |    47997.627| ±   5331.258 | ops/s|
+|FixBuzzBenchmark.testScalaImperativeInline  | thrpt |  2444048.870| ± 11.2% | ops/s|
+|FixBuzzBenchmark.testScalaImperativeCall    | thrpt |   498185.737| ±  2.3% | ops/s|
+|FixBuzzBenchmark.testScalaZFunctional       | thrpt |   277517.574| ±  4.0% | ops/s|
+|FixBuzzBenchmark.testScalaFunctional        | thrpt |   276278.529| ±  3.0% | ops/s|
+|FixBuzzBenchmark.testScalaFunctionalStreams | thrpt |    47997.627| ± 10.8% | ops/s|
 
 ## Kotlin Results.
 |Benchmark | Mode | Score|Error|Units|
 |----------|------|-----:|----:|-----|
-|FixBuzzBenchmark.testKotlinImperative       | thrpt |  3405441.229| ± 127977.960 | ops/s|
-|FixBuzzBenchmark.testKotlinFunctional       | thrpt |   266858.603| ±   8704.463 | ops/s|
+|FixBuzzBenchmark.testKotlinImperativeInline | thrpt |  3405441.229| ± 1.5% | ops/s|
+|FixBuzzBenchmark.testKotlinImperativeCall   | thrpt |   623649.034| ± 1.1% | ops/s|
+|FixBuzzBenchmark.testKotlinFunctional       | thrpt |   266858.603| ± 1.0% | ops/s|
 
-## Imperative Results.
+## Imperative Inline Results.
 |Benchmark | Mode | Score|Error|Units|
 |----------|------|-----:|----:|-----|
-|FixBuzzBenchmark.testJavaImperative         | thrpt |  3470211.762| ± 160182.652 | ops/s|
-|FixBuzzBenchmark.testGroovyImperative       | thrpt |  3457836.966| ±  90226.579 | ops/s|
-|FixBuzzBenchmark.testKotlinImperative       | thrpt |  3405441.229| ± 127977.960 | ops/s|
-|FixBuzzBenchmark.testScalaImperative        | thrpt |  2444048.870| ± 278984.479 | ops/s|
+|FixBuzzBenchmark.testJavaImperativeInline   | thrpt |  3470211.762| ± 4.5% | ops/s|
+|FixBuzzBenchmark.testGroovyImperativeInline | thrpt |  3457836.966| ± 2.5% | ops/s|
+|FixBuzzBenchmark.testKotlinImperativeInline | thrpt |  3405441.229| ± 1.5% | ops/s|
+|FixBuzzBenchmark.testScalaImperativeInline  | thrpt |  2444048.870| ± 11.2% | ops/s|
+
+## Imperative Call Results.
+|Benchmark | Mode | Score|Error|Units|
+|----------|------|-----:|----:|-----|
+|FixBuzzBenchmark.testJavaImperativeCall     | thrpt |   667866.636| ± 8.0% | ops/s|
+|FixBuzzBenchmark.testGroovyImperativeCall   | thrpt |   641418.919| ± 1.8% | ops/s|
+|FixBuzzBenchmark.testKotlinImperativeCall   | thrpt |   623649.034| ± 1.1% | ops/s|
+|FixBuzzBenchmark.testScalaImperativeCall    | thrpt |   498185.737| ± 2.3% | ops/s|
 
 
 ## Functional Results.
@@ -67,7 +79,7 @@ The numbers on Intel Core<sup>TM</sup> i7 2.5Ghz
 |FixBuzzBenchmark.testScalaFunctional        | thrpt |   276278.529| ±   9243.597 | ops/s|
 |FixBuzzBenchmark.testKotlinFunctional       | thrpt |   266858.603| ±   8704.463 | ops/s|
 |FixBuzzBenchmark.testJavaFunctional         | thrpt |   124968.783| ±   1586.580 | ops/s|
-|FixBuzzBenchmark.testJavaFunctionalStreams  | thrpt |    85608.047| ±   4151.209 | ops/s|
+|FixBuzzBenchmark.testJavaFunctionalMapReduce| thrpt |    85608.047| ±   4151.209 | ops/s|
 |FixBuzzBenchmark.testScalaFunctionalStreams | thrpt |    47997.627| ±   5331.258 | ops/s|
 |FixBuzzBenchmark.testGroovyFunctional       | thrpt |    13135.388| ±    189.675 | ops/s|
 
