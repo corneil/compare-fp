@@ -24,50 +24,23 @@ import java.io.PrintWriter;
 @State(value = Scope.Thread)
 public class FixBuzzBenchmark {
     @Benchmark
-    public void testJavaImperativeInline() {
+    public void testGroovyFunctional() {
         PrintWriter blackHole = new NullPrintWriter();
-        FizzBuzzImperative.imperative(blackHole);
+        FizzBuzzGroovyFunctional.functional(blackHole);
     }
-    @Benchmark
-    public void testGroovyImperativeInline() {
-        PrintWriter blackHole = new NullPrintWriter();
-        FizzBuzzGroovy.imperative(blackHole);
-    }
-    @Benchmark
-    public void testKotlinImperativeInline() {
-        PrintWriter blackHole = new NullPrintWriter();
-        FizzBuzzKotlinImperative.imperative(blackHole);
-    }
-    @Benchmark
-    public void testScalaImperativeInline() {
-        PrintWriter blackHole = new NullPrintWriter();
-        FizzBuzzScalaImperative.imperativeInline(blackHole);
-    }
-    @Benchmark
-    public void testJavaImperativeCall() {
-        PrintWriter blackHole = new NullPrintWriter();
-        FizzBuzzImperativeCall.imperative(blackHole);
-    }
+
     @Benchmark
     public void testGroovyImperativeCall() {
         PrintWriter blackHole = new NullPrintWriter();
         FizzBuzzGroovyCall.imperative(blackHole);
     }
+
     @Benchmark
-    public void testKotlinImperativeCall() {
+    public void testGroovyImperativeInline() {
         PrintWriter blackHole = new NullPrintWriter();
-        FizzBuzzKotlinImperativeCall.imperative(blackHole);
+        FizzBuzzGroovy.imperative(blackHole);
     }
-    @Benchmark
-    public void testScalaImperativeCall() {
-        PrintWriter blackHole = new NullPrintWriter();
-        FizzBuzzScalaImperativeCall.imperativeCall(blackHole);
-    }
-    @Benchmark
-    public void testGroovyFunctional() {
-        PrintWriter blackHole = new NullPrintWriter();
-        FizzBuzzGroovyFunctional.functional(blackHole);
-    }
+
     @Benchmark
     public void testJavaFunctional() {
         PrintWriter blackHole = new NullPrintWriter();
@@ -81,23 +54,62 @@ public class FixBuzzBenchmark {
     }
 
     @Benchmark
+    public void testJavaImperativeCall() {
+        PrintWriter blackHole = new NullPrintWriter();
+        FizzBuzzImperativeCall.imperative(blackHole);
+    }
+
+    @Benchmark
+    public void testJavaImperativeInline() {
+        PrintWriter blackHole = new NullPrintWriter();
+        FizzBuzzImperative.imperative(blackHole);
+    }
+
+    @Benchmark
     public void testKotlinFunctional() {
         PrintWriter blackHole = new NullPrintWriter();
         FizzBuzzKotlinFunctional.functional(blackHole);
     }
+
+    @Benchmark
+    public void testKotlinImperativeCall() {
+        PrintWriter blackHole = new NullPrintWriter();
+        FizzBuzzKotlinImperativeCall.imperative(blackHole);
+    }
+
+    @Benchmark
+    public void testKotlinImperativeInline() {
+        PrintWriter blackHole = new NullPrintWriter();
+        FizzBuzzKotlinImperative.imperative(blackHole);
+    }
+
     @Benchmark
     public void testScalaFunctional() {
         PrintWriter blackHole = new NullPrintWriter();
         FizzBuzzScala.functional(blackHole);
     }
-    @Benchmark
-    public void testScalaZFunctional() {
-        PrintWriter blackHole = new NullPrintWriter();
-        FizzBuzzScalaZ.functional(blackHole);
-    }
+
     @Benchmark
     public void testScalaFunctionalStreams() {
         PrintWriter blackHole = new NullPrintWriter();
         FizzBuzzScalaStreams.functional(blackHole);
+    }
+
+    @Benchmark
+    public void testScalaImperativeCall() {
+        PrintWriter blackHole = new NullPrintWriter();
+        FizzBuzzScalaImperativeCall.imperativeCall(blackHole);
+    }
+
+    @Benchmark
+    public void testScalaImperativeInline() {
+        PrintWriter blackHole = new NullPrintWriter();
+        FizzBuzzScalaImperative.imperativeInline(blackHole);
+    }
+
+    @Benchmark
+    public void testScalaZFunctional() {
+        PrintWriter blackHole = new NullPrintWriter();
+        FizzBuzzScalaZ.functional(blackHole);
     }
 }
