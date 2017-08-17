@@ -28,60 +28,60 @@ The numbers on Intel Core<sup>TM</sup> i7 2.5Ghz
 ## Java Results
 |Benchmark | Mode | Score|Units|
 |----------|------|-----:|-----|
-|FixBuzzBenchmark.testJavaImperativeInline   | thrpt |  3226045.656| ops/s|
-|FixBuzzBenchmark.testJavaImperativeCall     | thrpt |   669729.342| ops/s|
-|FixBuzzBenchmark.testJavaFunctional         | thrpt |   117016.449| ops/s|
-|FixBuzzBenchmark.testJavaFunctionalMapReduce| thrpt |    81895.197| ops/s|
+|FixBuzzBenchmark.testJavaImperativeInline   | thrpt |  3226045| ops/s|
+|FixBuzzBenchmark.testJavaImperativeCall     | thrpt |   669729| ops/s|
+|FixBuzzBenchmark.testJavaFunctional         | thrpt |   117016| ops/s|
+|FixBuzzBenchmark.testJavaFunctionalMapReduce| thrpt |    81895| ops/s|
 
 ## Groovy Results
 |Benchmark | Mode | Score|Units|
 |----------|------|-----:|-----|
-|FixBuzzBenchmark.testGroovyImperativeInline | thrpt |  3197418.803| ops/s|
-|FixBuzzBenchmark.testGroovyImperativeCall   | thrpt |   609238.034| ops/s|
-|FixBuzzBenchmark.testGroovyFunctional       | thrpt |    12522.988| ops/s|
+|FixBuzzBenchmark.testGroovyImperativeInline | thrpt |  3197418| ops/s|
+|FixBuzzBenchmark.testGroovyImperativeCall   | thrpt |   609238| ops/s|
+|FixBuzzBenchmark.testGroovyFunctional       | thrpt |    12522| ops/s|
 
 ## Scala Results
 |Benchmark | Mode | Score|Units|
 |----------|------|-----:|-----|
-|FixBuzzBenchmark.testScalaImperativeInline  | thrpt |   599972.121| ops/s|
-|FixBuzzBenchmark.testScalaImperativeCall    | thrpt |   553057.971| ops/s|
-|FixBuzzBenchmark.testScalaZFunctional       | thrpt |   267685.789| ops/s|
-|FixBuzzBenchmark.testScalaFunctional        | thrpt |   245340.031| ops/s|
-|FixBuzzBenchmark.testScalaFunctionalStreams | thrpt |    50052.843| ops/s|
+|FixBuzzBenchmark.testScalaImperativeInline  | thrpt |   599972| ops/s|
+|FixBuzzBenchmark.testScalaImperativeCall    | thrpt |   553057| ops/s|
+|FixBuzzBenchmark.testScalaZFunctional       | thrpt |   267685| ops/s|
+|FixBuzzBenchmark.testScalaFunctional        | thrpt |   245340| ops/s|
+|FixBuzzBenchmark.testScalaFunctionalStreams | thrpt |    50052| ops/s|
 
 ## Kotlin Results.
 |Benchmark | Mode | Score|Units|
 |----------|------|-----:|-----|
-|FixBuzzBenchmark.testKotlinImperativeInline | thrpt |  3059450.880| ops/s|
-|FixBuzzBenchmark.testKotlinImperativeCall   | thrpt |   601662.155| ops/s|
-|FixBuzzBenchmark.testKotlinFunctional       | thrpt |   253340.012| ops/s|
+|FixBuzzBenchmark.testKotlinImperativeInline | thrpt |  3254135| ops/s|
+|FixBuzzBenchmark.testKotlinImperativeCall   | thrpt |   615440| ops/s|
+|FixBuzzBenchmark.testKotlinFunctional       | thrpt |   263212| ops/s|
 
 ## Imperative Inline Results.
 |Benchmark | Mode | Score|Units|
 |----------|------|-----:|-----|
-|FixBuzzBenchmark.testJavaImperativeInline   | thrpt |  3226045.656| ops/s|
-|FixBuzzBenchmark.testGroovyImperativeInline | thrpt |  3197418.803| ops/s|
-|FixBuzzBenchmark.testKotlinImperativeInline | thrpt |  3059450.880| ops/s|
-|FixBuzzBenchmark.testScalaImperativeInline  | thrpt |   599972.121| ops/s|
+|FixBuzzBenchmark.testKotlinImperativeInline | thrpt |  3254135| ops/s|
+|FixBuzzBenchmark.testJavaImperativeInline   | thrpt |  3226045| ops/s|
+|FixBuzzBenchmark.testGroovyImperativeInline | thrpt |  3197418| ops/s|
+|FixBuzzBenchmark.testScalaImperativeInline  | thrpt |   599972| ops/s|
 
 ## Imperative Call Results.
 |Benchmark | Mode | Score|Units|
 |----------|------|-----:|-----|
-|FixBuzzBenchmark.testJavaImperativeCall     | thrpt |   669729.342| ops/s|
-|FixBuzzBenchmark.testGroovyImperativeCall   | thrpt |   609238.034| ops/s|
-|FixBuzzBenchmark.testKotlinImperativeCall   | thrpt |   601662.155| ops/s|
-|FixBuzzBenchmark.testScalaImperativeCall    | thrpt |   553057.971| ops/s|
+|FixBuzzBenchmark.testJavaImperativeCall     | thrpt |   669729| ops/s|
+|FixBuzzBenchmark.testKotlinImperativeCall   | thrpt |   615440| ops/s|
+|FixBuzzBenchmark.testGroovyImperativeCall   | thrpt |   609238| ops/s|
+|FixBuzzBenchmark.testScalaImperativeCall    | thrpt |   553057| ops/s|
 
 
 ## Functional Results.
 |Benchmark | Mode | Score|Units|
 |----------|------|-----:|-----|
-|FixBuzzBenchmark.testScalaZFunctional       | thrpt |   267685.789| ops/s|
-|FixBuzzBenchmark.testKotlinFunctional       | thrpt |   253340.012| ops/s|
-|FixBuzzBenchmark.testScalaFunctional        | thrpt |   245340.031| ops/s|
-|FixBuzzBenchmark.testJavaFunctional         | thrpt |   117016.449| ops/s|
-|FixBuzzBenchmark.testJavaFunctionalMapReduce| thrpt |    81895.197| ops/s|
-|FixBuzzBenchmark.testScalaFunctionalStreams | thrpt |    50052.843| ops/s|
-|FixBuzzBenchmark.testGroovyFunctional       | thrpt |    12522.988| ops/s|
+|FixBuzzBenchmark.testScalaZFunctional       | thrpt |   267685| ops/s|
+|FixBuzzBenchmark.testKotlinFunctional       | thrpt |   263212| ops/s|
+|FixBuzzBenchmark.testScalaFunctional        | thrpt |   245340| ops/s|
+|FixBuzzBenchmark.testJavaFunctional         | thrpt |   117016| ops/s|
+|FixBuzzBenchmark.testJavaFunctionalMapReduce| thrpt |    81895| ops/s|
+|FixBuzzBenchmark.testScalaFunctionalStreams | thrpt |    50052| ops/s|
+|FixBuzzBenchmark.testGroovyFunctional       | thrpt |    12522| ops/s|
 
 [<br/><br/><img width="48px" height="48px" src="https://raw.githubusercontent.com/corneil/spring-data-rest-angular-demo/master/buy-me-coffee.png"><img><br/><span style="font-size: x-small">Buy me Coffee</span>](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=corneil%2eduplessis%40gmail%2ecom&lc=ZA&item_name=Corneil%20du%20Plessis&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)
