@@ -7,6 +7,7 @@ buildscript {
     }
     dependencies {
         classpath group: 'org.jetbrains.kotlin', name: 'kotlin-gradle-plugin', version: kotlinVersion
+        classpath 'io.spring.gradle:dependency-management-plugin:1.0.3.RELEASE'
     }
 }
 
@@ -19,7 +20,7 @@ repositories {
     jcenter()
     mavenCentral()
 }
-
+apply plugin: 'io.spring.dependency-management'
 apply plugin: 'me.champeau.gradle.jmh'
 apply plugin: 'java'
 apply plugin: 'scala'
@@ -29,28 +30,39 @@ apply plugin: 'kotlin'
 group 'io.jumpco.demo'
 version '1.0-SNAPSHOT'
 
-
 sourceCompatibility = JavaVersion.VERSION_1_8
+
+dependencyManagement {
+    dependencies {
+        dependency 'junit:junit:4.12'
+        dependency 'org.scala-lang:scala-library:2.12.2'
+        dependency 'org.scalaz:scalaz-core_2.12:7.2.13'
+        dependency 'org.codehaus.groovy:groovy-all:2.4.10'
+        dependency "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlinVersion"
+        dependency "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+        dependency "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
+        dependency "org.jetbrains.kotlin:kotlin-test:$kotlinVersion"
+    }
+}
 
 dependencies {
 
-    testCompile 'junit:junit:4.12'
+    testCompile 'junit:junit'
 
-    compile 'org.scala-lang:scala-library:2.12.2'
-    compile 'org.scalaz:scalaz-core_2.12:7.2.13'
+    compile 'org.scala-lang:scala-library'
+    compile 'org.scalaz:scalaz-core_2.12'
 
-    compile 'org.codehaus.groovy:groovy-all:2.4.10'
+    compile 'org.codehaus.groovy:groovy-all'
 
-    compile group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib-jre8', version: kotlinVersion
-    compile group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib', version: kotlinVersion
-    compile group: 'org.jetbrains.kotlin', name: 'kotlin-reflect', version: kotlinVersion
-    testCompile group: 'org.jetbrains.kotlin', name: 'kotlin-test', version: kotlinVersion
+    compile group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib-jre8'
+    compile group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib'
+    compile group: 'org.jetbrains.kotlin', name: 'kotlin-reflect'
+    testCompile group: 'org.jetbrains.kotlin', name: 'kotlin-test'
 
 }
 
 jmh {
     duplicateClassesStrategy = 'warn'
-    include ='jmh'
     verbosity = logger.infoEnabled ? 'EXTRA' : 'NORMAL'
     benchmarkMode = ['thrpt']
     warmupIterations = 10
