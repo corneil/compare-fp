@@ -28,7 +28,7 @@ The numbers on Intel Core<sup>TM</sup> i7 2.5Ghz
 
 ## Results
 
-[%header, format=csv,cols=1<,1^,2>,^]
+[%header, format=csv,cols="<,^,>,>,^"]
 |===
 Benchmark,Mode,Score,Score Error (99.9%),Unit
 GroovyFunctional,thrpt,12820.74,281.94,ops/s
