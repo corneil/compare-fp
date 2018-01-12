@@ -28,25 +28,25 @@ The numbers on Intel Core<sup>TM</sup> i7 2.5Ghz
 
 ## Results
 
-[%header, format=csv]
+[%header, format=csv,cols=1<,1^,2>,^]
 |===
 Benchmark,Mode,Score,Score Error (99.9%),Unit
-GroovyFunctional,thrpt,12820.73978,281.939984,ops/s
-GroovyImperativeCall,thrpt,682379.7792,103680.4374,ops/s
-GroovyImperativeInline,thrpt,1531357.057,341182.4514,ops/s
-JavaFunctional,thrpt,137132.5174,6234.278272,ops/s
-JavaFunctionalMapReduce,thrpt,94617.56919,16372.1825,ops/s
-JavaImperativeCall,thrpt,681416.682,142119.2612,ops/s
-JavaImperativeInline,thrpt,1520181.777,194141.8482,ops/s
-KotlinFunctional,thrpt,199337.8754,40311.67095,ops/s
-KotlinFunctionalMapReduce,thrpt,141186.215,48607.77362,ops/s
-KotlinImperativeCall,thrpt,345999.772,563752.5202,ops/s
-KotlinImperativeInline,thrpt,1395795.271,261373.5296,ops/s
-ScalaFunctional,thrpt,243670.9678,214746.0072,ops/s
-ScalaFunctionalStreams,thrpt,41022.64095,12266.89129,ops/s
-ScalaImperativeCall,thrpt,461477.3383,213161.0395,ops/s
-ScalaImperativeInline,thrpt,497250.7846,116163.0785,ops/s
-ScalaZFunctional,thrpt,333743.5667,14601.15439,ops/s
+GroovyFunctional,thrpt,12820.74,281.94,ops/s
+GroovyImperativeCall,thrpt,682379.78,103680.44,ops/s
+GroovyImperativeInline,thrpt,1531357.06,341182.45,ops/s
+JavaFunctional,thrpt,137132.52,6234.28,ops/s
+JavaFunctionalMapReduce,thrpt,94617.57,16372.18,ops/s
+JavaImperativeCall,thrpt,681416.68,142119.26,ops/s
+JavaImperativeInline,thrpt,1520181.78,194141.85,ops/s
+KotlinFunctional,thrpt,199337.88,40311.67,ops/s
+KotlinFunctionalMapReduce,thrpt,141186.22,48607.77,ops/s
+KotlinImperativeCall,thrpt,345999.77,563752.52,ops/s
+KotlinImperativeInline,thrpt,1395795.27,261373.53,ops/s
+ScalaFunctional,thrpt,243670.97,214746.01,ops/s
+ScalaFunctionalStreams,thrpt,41022.64,12266.89,ops/s
+ScalaImperativeCall,thrpt,461477.34,213161.04,ops/s
+ScalaImperativeInline,thrpt,497250.78,116163.08,ops/s
+ScalaZFunctional,thrpt,333743.57,14601.15,ops/s
 |===
 
 
