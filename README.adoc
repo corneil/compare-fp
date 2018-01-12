@@ -24,7 +24,7 @@ The numbers on Intel Core<sup>TM</sup> i7 2.5Ghz
 * Refactored Java and Scala Predicates to inline lambdas instead of static methods. No significant difference in performance.
 * Added Scalaz version after [Andreas Pauley](https://twitter.com/apauley) linked to [https://gist.github.com/apauley/ca8197f5b9b822097c50](https://gist.github.com/apauley/ca8197f5b9b822097c50) Providing some of the best performance of all the functional versions
 * Kotlin 1.1.3 moves up in the functional performance.
-* Kotlin 1.2.10 improves functional performance but impact imperative performance.
+* Kotlin 1.2.10 improves functional performance.
 
 ## Results
 
