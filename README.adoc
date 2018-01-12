@@ -28,27 +28,25 @@ The numbers on Intel Core<sup>TM</sup> i7 2.5Ghz
 
 ## Results
 
-[%header, format=csv,cols="<,^,>,>,^"]
-|===
-Benchmark,Mode,Score,Score Error (99.9%),Unit
-GroovyFunctional,thrpt,12820.74,281.94,ops/s
-GroovyImperativeCall,thrpt,682379.78,103680.44,ops/s
-GroovyImperativeInline,thrpt,1531357.06,341182.45,ops/s
-JavaFunctional,thrpt,137132.52,6234.28,ops/s
-JavaFunctionalMapReduce,thrpt,94617.57,16372.18,ops/s
-JavaImperativeCall,thrpt,681416.68,142119.26,ops/s
-JavaImperativeInline,thrpt,1520181.78,194141.85,ops/s
-KotlinFunctional,thrpt,199337.88,40311.67,ops/s
-KotlinFunctionalMapReduce,thrpt,141186.22,48607.77,ops/s
-KotlinImperativeCall,thrpt,345999.77,563752.52,ops/s
-KotlinImperativeInline,thrpt,1395795.27,261373.53,ops/s
-ScalaFunctional,thrpt,243670.97,214746.01,ops/s
-ScalaFunctionalStreams,thrpt,41022.64,12266.89,ops/s
-ScalaImperativeCall,thrpt,461477.34,213161.04,ops/s
-ScalaImperativeInline,thrpt,497250.78,116163.08,ops/s
-ScalaZFunctional,thrpt,333743.57,14601.15,ops/s
-|===
-
+```
+Benchmark                                        Mode  Cnt        Score        Error  Units
+GroovyFunctional           thrpt    5    12619.216 ±    270.197  ops/s
+GroovyImperativeCall       thrpt    5   675735.792 ±  62398.213  ops/s
+GroovyImperativeInline     thrpt    5  1359058.579 ± 131992.948  ops/s
+JavaFunctional             thrpt    5   126605.214 ±   8085.458  ops/s
+JavaFunctionalMapReduce    thrpt    5    89964.988 ±   6849.705  ops/s
+JavaImperativeCall         thrpt    5   732926.264 ±  28716.218  ops/s
+JavaImperativeInline       thrpt    5  1607778.221 ±  57141.293  ops/s
+KotlinFunctional           thrpt    5   203963.845 ±  11904.527  ops/s
+KotlinFunctionalMapReduce  thrpt    5   156905.247 ±   5861.093  ops/s
+KotlinImperativeCall       thrpt    5   734488.629 ±  29682.100  ops/s
+KotlinImperativeInline     thrpt    5  1629160.903 ±  84786.157  ops/s
+ScalaFunctional            thrpt    5   287402.217 ±  13704.109  ops/s
+ScalaFunctionalStreams     thrpt    5    54569.690 ±   7293.287  ops/s
+ScalaImperativeCall        thrpt    5   568022.959 ±  12447.327  ops/s
+ScalaImperativeInline      thrpt    5   497345.830 ±  11425.387  ops/s
+ScalaZFunctional           thrpt    5   322429.558 ±  14499.064  ops/s
+```
 
 
 ++++
