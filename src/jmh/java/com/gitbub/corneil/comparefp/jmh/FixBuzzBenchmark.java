@@ -5,6 +5,7 @@ import com.gitbub.corneil.comparefp.FizzBuzzFunctionalMapReduce;
 import com.gitbub.corneil.comparefp.FizzBuzzImperative;
 import com.gitbub.corneil.comparefp.FizzBuzzImperativeCall;
 import com.gitbub.corneil.comparefp.FizzBuzzKotlinFunctional;
+import com.gitbub.corneil.comparefp.FizzBuzzKotlinFunctionalMapReduce;
 import com.gitbub.corneil.comparefp.FizzBuzzKotlinImperative;
 import com.gitbub.corneil.comparefp.FizzBuzzKotlinImperativeCall;
 import com.github.corneil.comparefp.FizzBuzzGroovy;
@@ -23,11 +24,6 @@ import java.io.PrintWriter;
 
 @State(value = Scope.Thread)
 public class FixBuzzBenchmark {
-    @Benchmark
-    public void testGroovyFunctional() {
-        PrintWriter blackHole = new NullPrintWriter();
-        FizzBuzzGroovyFunctional.functional(blackHole);
-    }
 
     @Benchmark
     public void testGroovyImperativeCall() {
@@ -39,6 +35,12 @@ public class FixBuzzBenchmark {
     public void testGroovyImperativeInline() {
         PrintWriter blackHole = new NullPrintWriter();
         FizzBuzzGroovy.imperative(blackHole);
+    }
+
+    @Benchmark
+    public void testGroovyFunctional() {
+        PrintWriter blackHole = new NullPrintWriter();
+        FizzBuzzGroovyFunctional.functional(blackHole);
     }
 
     @Benchmark
@@ -69,6 +71,11 @@ public class FixBuzzBenchmark {
     public void testKotlinFunctional() {
         PrintWriter blackHole = new NullPrintWriter();
         FizzBuzzKotlinFunctional.functional(blackHole);
+    }
+    @Benchmark
+    public void testKotlinFunctionalMapReduce() {
+        PrintWriter blackHole = new NullPrintWriter();
+        FizzBuzzKotlinFunctionalMapReduce.functional(blackHole);
     }
 
     @Benchmark

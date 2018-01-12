@@ -2,20 +2,23 @@ package com.gitbub.corneil.comparefp
 
 import java.io.PrintWriter
 
-class FizzBuzzKotlinFunctional {
+class FizzBuzzKotlinFunctionalMapReduce {
 
     companion object {
         data class Replacement(val rule: (Int) -> Boolean, val output: String)
 
         private val fizzBuzzRules = listOf(
-                Replacement({ i -> i % 15 == 0 }, "FizzBuzz"),
                 Replacement({ i -> i % 3 == 0 }, "Fizz"),
                 Replacement({ i -> i % 5 == 0 }, "Buzz")
         )
 
         fun replace(i: Int, replacements: List<Replacement>): String {
-            val result: Replacement? = replacements.firstOrNull { r -> r.rule(i) }
-            return result?.output ?: i.toString()
+            val items = replacements.filter { r -> r.rule(i) }.map { r -> r.output }
+            return if (items.isEmpty()) {
+                i.toString()
+            } else {
+                items.reduce { a, s -> a + s }
+            }
         }
 
         @JvmStatic

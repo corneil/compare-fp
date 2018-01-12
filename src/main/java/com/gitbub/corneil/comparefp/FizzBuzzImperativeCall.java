@@ -3,6 +3,12 @@ package com.gitbub.corneil.comparefp;
 import java.io.PrintWriter;
 
 public class FizzBuzzImperativeCall {
+    public static void imperative(PrintWriter writer) {
+        for (int i = 1; i <= 100; i++) {
+            writer.println(replace(i));
+        }
+    }
+
     private static String replace(int i) {
         if (i % 15 == 0) {
             return "FizzBuzz";
@@ -12,11 +18,6 @@ public class FizzBuzzImperativeCall {
             return "Buzz";
         } else {
             return Integer.toString(i);
-        }
-    }
-    public static void imperative(PrintWriter writer) {
-        for(int i = 1; i <= 100; i++) {
-            writer.println(replace(i));
         }
     }
 }

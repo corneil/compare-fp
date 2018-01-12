@@ -5,6 +5,7 @@ import com.gitbub.corneil.comparefp.FizzBuzzFunctionalMapReduce;
 import com.gitbub.corneil.comparefp.FizzBuzzImperative;
 import com.gitbub.corneil.comparefp.FizzBuzzImperativeCall;
 import com.gitbub.corneil.comparefp.FizzBuzzKotlinFunctional;
+import com.gitbub.corneil.comparefp.FizzBuzzKotlinFunctionalMapReduce;
 import com.gitbub.corneil.comparefp.FizzBuzzKotlinImperative;
 import com.gitbub.corneil.comparefp.FizzBuzzKotlinImperativeCall;
 import com.github.corneil.comparefp.FizzBuzzGroovy;
@@ -45,6 +46,14 @@ public class FizzBuzzTest {
         StringWriter output = new StringWriter();
         PrintWriter writer = new PrintWriter(output);
         FizzBuzzKotlinFunctional.functional(writer);
+        writer.flush();
+        verifyOutput(output.toString());
+    }
+    @Test
+    public void testKotlinFunctionalMapReduce() {
+        StringWriter output = new StringWriter();
+        PrintWriter writer = new PrintWriter(output);
+        FizzBuzzKotlinFunctionalMapReduce.functional(writer);
         writer.flush();
         verifyOutput(output.toString());
     }
