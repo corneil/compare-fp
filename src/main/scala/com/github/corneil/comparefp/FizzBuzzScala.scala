@@ -14,14 +14,14 @@ object FizzBuzzScala {
   }
 
   val modulusCheck = (i: Int, div: Int) => i % div == 0
-  val fizzAndOrBuzz = List(
+  val fizzBuzzRules = List(
     Replacement(i => i % 15 == 0, "FizzBuzz"),
     Replacement(i => i % 3 == 0, "Fizz"),
     Replacement(i => i % 5 == 0, "Buzz")
   )
 
-  private def replace(i: Int, rules: List[Replacement]): String = {
-    rules.find(r => r.when(i)) match {
+  private def replace(i: Int): String = {
+    fizzBuzzRules.find(r => r.when(i)) match {
       case Some(r) => r.output
       case None => i.toString
     }
@@ -29,7 +29,7 @@ object FizzBuzzScala {
 
   def functional(writer: PrintWriter): Unit = {
     for (i <- 1 to 100) {
-      writer.println(replace(i, fizzAndOrBuzz))
+      writer.println(replace(i))
     }
   }
 }
@@ -49,9 +49,7 @@ object FizzBuzzScalaStreams {
 
 object FizzBuzzScalaZ {
   def fizz(n: Int): Option[String] = if (n % 3 == 0) some("Fizz") else None
-
   def buzz(n: Int): Option[String] = if (n % 5 == 0) Some("Buzz") else None
-
   def fizzbuzz(n: Int): String = (fizz(n) |+| buzz(n)).getOrElse(n.toString)
 
   def functional(writer: PrintWriter): Unit = {

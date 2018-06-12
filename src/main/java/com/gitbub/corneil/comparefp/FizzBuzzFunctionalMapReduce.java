@@ -8,7 +8,7 @@ import java.util.function.Predicate;
 import java.util.stream.IntStream;
 
 public class FizzBuzzFunctionalMapReduce {
-    private static List<Replacement> fizzAndOrBuzz =
+    private static List<Replacement> fizzBuzzRules =
             Collections.unmodifiableList(Arrays.asList(
                     new Replacement(i -> i % 3 == 0, "Fizz"),
                     new Replacement(i -> i % 5 == 0, "Buzz")
@@ -19,7 +19,7 @@ public class FizzBuzzFunctionalMapReduce {
     }
 
     private static String replace(final Integer i) {
-        return fizzAndOrBuzz.stream()
+        return fizzBuzzRules.stream()
                 .filter(r -> r.when.test(i))
                 .map(r -> r.output)
                 .reduce(String::concat)
@@ -29,7 +29,7 @@ public class FizzBuzzFunctionalMapReduce {
     public static void functionalMapReduce(final PrintWriter writer) {
         IntStream.range(1, 101)
                 .mapToObj(FizzBuzzFunctionalMapReduce::fizzBuzz)
-                .forEach((i) -> writer.println(i));
+                .forEach(i -> writer.println(i));
     }
 
     private static class Replacement {

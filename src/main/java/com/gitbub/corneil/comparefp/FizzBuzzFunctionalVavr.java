@@ -1,30 +1,29 @@
 package com.gitbub.corneil.comparefp;
 
-import java.io.PrintWriter;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
-import java.util.function.Predicate;
-import java.util.stream.Stream;
 
-public class FizzBuzzFunctional {
+import io.vavr.collection.List;
+
+import java.io.PrintWriter;
+import java.util.function.Predicate;
+
+
+public class FizzBuzzFunctionalVavr {
 	private static final List<Replacement> fizzBuzzRules =
-		Collections.unmodifiableList(Arrays.asList(
+		List.of(
 			new Replacement(i -> i % 15 == 0, "FizzBuzz"),
 			new Replacement(i -> i % 3 == 0, "Fizz"),
 			new Replacement(i -> i % 5 == 0, "Buzz")
-		));
+		);
 
 	public static void functional(final PrintWriter writer) {
-		Stream.iterate(1, i -> i + 1)
-			.limit(100)
+		List.range(1, 101)
 			.forEach(i -> writer.println(replace(i)));
 	}
 
 	private static String replace(final Integer i) {
-		final Optional<Replacement> replacement = fizzBuzzRules.stream().filter(r -> r.when.test(i)).findFirst();
-		return replacement.isPresent() ? replacement.get().output : i.toString();
+		return fizzBuzzRules.find(r -> r.when.test(i))
+			.map(r -> r.output)
+			.getOrElse(i.toString());
 	}
 
 	private static class Replacement {

@@ -13,15 +13,15 @@ class FizzBuzzKotlinFunctional {
                 Replacement({ i -> i % 5 == 0 }, "Buzz")
         )
 
-        fun replace(i: Int, replacements: List<Replacement>): String {
-            val result: Replacement? = replacements.firstOrNull { r -> r.rule(i) }
+        fun replace(i: Int): String {
+            val result = fizzBuzzRules.firstOrNull { r -> r.rule(i) }
             return result?.output ?: i.toString()
         }
 
         @JvmStatic
         fun functional(pw: PrintWriter) {
             for (i in 1..100) {
-                pw.println(replace(i, fizzBuzzRules))
+                pw.println(replace(i))
             }
         }
     }

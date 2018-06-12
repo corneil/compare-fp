@@ -12,8 +12,8 @@ class FizzBuzzKotlinFunctionalMapReduce {
                 Replacement({ i -> i % 5 == 0 }, "Buzz")
         )
 
-        fun replace(i: Int, replacements: List<Replacement>): String {
-            val items = replacements.filter { r -> r.rule(i) }.map { r -> r.output }
+        fun replace(i: Int): String {
+            val items = fizzBuzzRules.filter { r -> r.rule(i) }.map { r -> r.output }
             return if (items.isEmpty()) {
                 i.toString()
             } else {
@@ -24,7 +24,7 @@ class FizzBuzzKotlinFunctionalMapReduce {
         @JvmStatic
         fun functional(pw: PrintWriter) {
             for (i in 1..100) {
-                pw.println(replace(i, fizzBuzzRules))
+                pw.println(replace(i))
             }
         }
     }

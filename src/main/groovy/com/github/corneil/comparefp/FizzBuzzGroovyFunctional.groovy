@@ -7,23 +7,26 @@ class FizzBuzzGroovyFunctional {
     static class Replacement {
         Closure when
         String output
+
         Replacement(Closure when, String output) {
             this.when = when
             this.output = output
         }
     }
-    static replacements = [
-        new Replacement({it % 15 == 0}, "FizzBuzz"),
-        new Replacement({it % 5 == 0}, "Buzz"),
-        new Replacement({it % 3 == 0}, "Fizz")
+    static fizzBuzzRules = [
+            new Replacement({ it % 15 == 0 }, "FizzBuzz"),
+            new Replacement({ it % 5 == 0 }, "Buzz"),
+            new Replacement({ it % 3 == 0 }, "Fizz")
     ]
-    static String replace(Integer i, List<Replacement> replacements) {
-        def replacement = replacements.find{ it.when(i) }
-        return replacement ? replacement.output : i.toString()
+
+    static String replace(Integer i) {
+        def r = fizzBuzzRules.find { it.when(i) }
+        return r?.output ?: i.toString()
     }
+
     static functional(PrintWriter writer) {
-        for(int i = 1; i <= 100; i++) {
-            writer.println(replace(i, replacements))
+        for (int i = 1; i <= 100; i++) {
+            writer.println(replace(i))
         }
     }
 }
