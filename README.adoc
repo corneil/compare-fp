@@ -50,8 +50,8 @@ FixBuzzBenchmark.testKotlinImperativeInline     thrpt    5  2609107.175 ± 12064
 FixBuzzBenchmark.testScalaFunctionalStreams     thrpt    5    45459.175 ±    9841.524  ops/s
 FixBuzzBenchmark.testScalaFunctional            thrpt    5   299938.096 ±   14362.987  ops/s
 FixBuzzBenchmark.testScalaZFunctional           thrpt    5   353630.137 ±  125385.402  ops/s
-FixBuzzBenchmark.testScalaImperativeCall        thrpt    5   691682.453 ±  193006.822  ops/s
 FixBuzzBenchmark.testScalaImperativeInline      thrpt    5   587895.917 ±  104655.772  ops/s
+FixBuzzBenchmark.testScalaImperativeCall        thrpt    5   691682.453 ±  193006.822  ops/s
 ```
 
 ### Imperative
