@@ -1,4 +1,4 @@
-package com.gitbub.corneil.comparefp.jmh;
+package com.gitbub.corneil.comparefp;
 
 import java.io.IOException;
 import java.io.Writer;

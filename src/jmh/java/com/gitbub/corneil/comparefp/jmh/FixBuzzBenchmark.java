@@ -1,6 +1,7 @@
 package com.gitbub.corneil.comparefp.jmh;
 
 import com.gitbub.corneil.comparefp.*;
+import com.gitbub.corneil.comparefp.NullPrintWriter;
 import com.github.corneil.comparefp.FizzBuzzGroovy;
 import com.github.corneil.comparefp.FizzBuzzGroovyCall;
 import com.github.corneil.comparefp.FizzBuzzGroovyFunctional;
