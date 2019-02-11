@@ -12,7 +12,7 @@ Here is a little project to compare the performance of imperative and functional
 The [jmh gradle plugin](https://github.com/melix/jmh-gradle-plugin) was a great discovery.
 
 
-The numbers on Intel Core<sup>TM</sup> i7 2.5Ghz
+The numbers on Intel Core^TM^ i7 2.5Ghz
 
 ## Changelog
 * Added [Scala](http://www.scala-lang.org) versions.
