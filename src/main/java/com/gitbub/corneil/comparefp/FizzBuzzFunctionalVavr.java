@@ -17,10 +17,10 @@ public class FizzBuzzFunctionalVavr {
 
 	public static void functional(final PrintWriter writer) {
 		List.range(1, 101)
-			.forEach(i -> writer.println(replace(i)));
+			.forEach(i -> writer.println(fizzBuzz(i)));
 	}
 
-	private static String replace(final Integer i) {
+	private static String fizzBuzz(final Integer i) {
 		return fizzBuzzRules.find(r -> r.when.test(i))
 			.map(r -> r.output)
 			.getOrElse(i.toString());

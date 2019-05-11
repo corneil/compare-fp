@@ -4,7 +4,7 @@ import java.io.PrintWriter
 
 class FizzBuzzKotlinImperativeCall {
     companion object {
-        inline fun replace(i: Int) = when {
+        inline fun fizzBuzz(i: Int) = when {
             i % 15 == 0 -> "FizzBuzz"
             i % 3 == 0 -> "Fizz"
             i % 5 == 0 -> "Buzz"
@@ -14,7 +14,7 @@ class FizzBuzzKotlinImperativeCall {
         @JvmStatic
         fun imperative(pw: PrintWriter) {
             for (i in 1..100) {
-                pw.println(replace(i))
+                pw.println(fizzBuzz(i))
             }
         }
     }

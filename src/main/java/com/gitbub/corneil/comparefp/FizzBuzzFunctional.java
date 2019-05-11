@@ -12,8 +12,8 @@ public class FizzBuzzFunctional {
 	private static final List<Replacement> fizzBuzzRules =
 		Collections.unmodifiableList(Arrays.asList(
 			new Replacement(i -> i % 15 == 0, "FizzBuzz"),
-			new Replacement(i -> i % 3 == 0, "Fizz"),
-			new Replacement(i -> i % 5 == 0, "Buzz")
+			new Replacement(i -> i % 5 == 0, "Buzz"),
+			new Replacement(i -> i % 3 == 0, "Fizz")
 		));
 
 	public static void functional(final PrintWriter writer) {
