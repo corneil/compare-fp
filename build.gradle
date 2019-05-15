@@ -30,8 +30,6 @@ group 'io.jumpco.demo'
 version '1.0-SNAPSHOT'
 
 
-sourceCompatibility = JavaVersion.VERSION_1_8
-
 configurations {
     jmhCompile
 }
