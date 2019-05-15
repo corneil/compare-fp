@@ -1,6 +1,7 @@
 # Performance tests with different JVMs
 
 ## 8.0.192 openjdk
+```
 Benchmark                                        Mode  Cnt        Score       Error  Units
 FixBuzzBenchmark.testGroovyFunctional           thrpt    5    13584.003 ±   331.485  ops/s
 FixBuzzBenchmark.testGroovyImperativeCall       thrpt    5   724303.222 ±  9530.107  ops/s
