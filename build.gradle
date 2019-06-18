@@ -48,6 +48,8 @@ dependencies {
     compile group: 'org.jetbrains.kotlin', name: 'kotlin-reflect', version: kotlinVersion
     testCompile group: 'org.jetbrains.kotlin', name: 'kotlin-test', version: kotlinVersion
     jmhCompile 'org.openjdk.jmh:jmh-core:1.21'
+    jmhCompile 'org.openjdk.jmh:jmh-generator-annprocess:1.21'
+
 }
 
 jmh {

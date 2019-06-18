@@ -11,8 +11,7 @@ Here is a little project to compare the performance of imperative and functional
 
 The [jmh gradle plugin](https://github.com/melix/jmh-gradle-plugin) was a great discovery.
 
-
-The numbers on Intel Core^TM^ i7 2.5Ghz
+The numbers on Intel Core^TM^ i7 2.9Ghz
 
 ## Changelog
 * Added [Scala](http://www.scala-lang.org) versions.
@@ -27,60 +26,67 @@ The numbers on Intel Core^TM^ i7 2.5Ghz
 * Kotlin 1.2.10 improves functional performance.
 * Added Java - Vavr using vavr 0.9.2.
 * Updated Kotlin to 1.2.41.
+* Updated Kotlin to 1.3.21
 
 ## Results
 
+Units = ops/s
+JVM = GraalVM 19.0.2  ** Zulu 11.0.3 -- Faster for inline functions and some imperative calls
+
 ```
-Benchmark                                        Mode  Cnt        Score         Error  Units
-FixBuzzBenchmark.testGroovyFunctional           thrpt    5    11221.808 ±    4008.804  ops/s
-FixBuzzBenchmark.testGroovyImperativeCall       thrpt    5   655433.913 ±  168306.929  ops/s
-FixBuzzBenchmark.testGroovyImperativeInline     thrpt    5  1979069.121 ±  677704.565  ops/s
+Benchmark                                        Mode  Cnt      Score
+FixBuzzBenchmark.testGroovyFunctional           thrpt    5     16474.8
+FixBuzzBenchmark.testGroovyImperativeCall       thrpt    5   1573780.8
+FixBuzzBenchmark.testGroovyImperativeInline     thrpt    5   5461063.6  ** 326833664.8
 
-FixBuzzBenchmark.testJavaFunctional             thrpt    5   112316.685 ±   15388.262  ops/s
-FixBuzzBenchmark.testJavaFunctionalMapReduce    thrpt    5    89820.347 ±   36001.408  ops/s
-FixBuzzBenchmark.testJavaFunctionalVavr         thrpt    5   181992.684 ±    5319.046  ops/s
-FixBuzzBenchmark.testJavaImperativeCall         thrpt    5   791174.387 ±  178065.276  ops/s
-FixBuzzBenchmark.testJavaImperativeInline       thrpt    5  2630778.181 ±  520830.994  ops/s
+FixBuzzBenchmark.testJavaFunctional             thrpt    5    132041.3
+FixBuzzBenchmark.testJavaFunctionalMapReduce    thrpt    5    109356.1
+FixBuzzBenchmark.testJavaFunctionalVavr         thrpt    5    276654.9
+FixBuzzBenchmark.testJavaImperativeCall         thrpt    5   1549195.4
+FixBuzzBenchmark.testJavaImperativeInline       thrpt    5   5247794.3 ** 1224985341.6
 
-FixBuzzBenchmark.testKotlinFunctionalMapReduce  thrpt    5   171711.141 ±   62925.735  ops/s
-FixBuzzBenchmark.testKotlinFunctional           thrpt    5   209749.830 ±   85171.772  ops/s
-FixBuzzBenchmark.testKotlinImperativeCall       thrpt    5   791791.979 ±   71202.302  ops/s
-FixBuzzBenchmark.testKotlinImperativeInline     thrpt    5  2609107.175 ± 1206435.392  ops/s
+FixBuzzBenchmark.testKotlinFunctionalMapReduce  thrpt    5    406664.1
+FixBuzzBenchmark.testKotlinFunctional           thrpt    5    623363.6
+FixBuzzBenchmark.testKotlinImperativeCall       thrpt    5   1754154.1
+FixBuzzBenchmark.testKotlinImperativeInline     thrpt    5   5792990.7 ** 1220873544.8
 
-FixBuzzBenchmark.testScalaFunctionalStreams     thrpt    5    45459.175 ±    9841.524  ops/s
-FixBuzzBenchmark.testScalaFunctional            thrpt    5   299938.096 ±   14362.987  ops/s
-FixBuzzBenchmark.testScalaZFunctional           thrpt    5   353630.137 ±  125385.402  ops/s
-FixBuzzBenchmark.testScalaImperativeInline      thrpt    5   587895.917 ±  104655.772  ops/s
-FixBuzzBenchmark.testScalaImperativeCall        thrpt    5   691682.453 ±  193006.822  ops/s
+FixBuzzBenchmark.testScalaFunctionalStreams     thrpt    5     49250.0
+FixBuzzBenchmark.testScalaFunctional            thrpt    5    559828.4
+FixBuzzBenchmark.testScalaZFunctional           thrpt    5    653267.0
+FixBuzzBenchmark.testScalaImperativeCall        thrpt    5    950559.6 ** 1381204.3
+FixBuzzBenchmark.testScalaImperativeInline      thrpt    5   1555235.3 ** 1773103.6
 ```
 
 ### Imperative
+
 ```
-Benchmark                                        Mode  Cnt        Score         Error  Units
-FixBuzzBenchmark.testJavaImperativeInline       thrpt    5  2630778.181 ±  520830.994  ops/s
-FixBuzzBenchmark.testKotlinImperativeInline     thrpt    5  2609107.175 ± 1206435.392  ops/s
-FixBuzzBenchmark.testGroovyImperativeInline     thrpt    5  1979069.121 ±  677704.565  ops/s
-FixBuzzBenchmark.testKotlinImperativeCall       thrpt    5   791791.979 ±   71202.302  ops/s
-FixBuzzBenchmark.testJavaImperativeCall         thrpt    5   791174.387 ±  178065.276  ops/s
-FixBuzzBenchmark.testScalaImperativeCall        thrpt    5   691682.453 ±  193006.822  ops/s
-FixBuzzBenchmark.testGroovyImperativeCall       thrpt    5   655433.913 ±  168306.929  ops/s
-FixBuzzBenchmark.testScalaImperativeInline      thrpt    5   587895.917 ±  104655.772  ops/s
+Benchmark                                        Mode  Cnt       Score
+FixBuzzBenchmark.testScalaImperativeCall        thrpt    5    950559.6 **    1381204.3
+FixBuzzBenchmark.testJavaImperativeCall         thrpt    5   1549195.4
+FixBuzzBenchmark.testScalaImperativeInline      thrpt    5   1555235.3 **    1773103.6
+FixBuzzBenchmark.testGroovyImperativeCall       thrpt    5   1573780.8 **    1751589.0
+FixBuzzBenchmark.testKotlinImperativeCall       thrpt    5   1754154.1
+FixBuzzBenchmark.testJavaImperativeInline       thrpt    5   5247794.3 ** 1224985341.6
+FixBuzzBenchmark.testGroovyImperativeInline     thrpt    5   5461063.6 **  326833664.8
+FixBuzzBenchmark.testKotlinImperativeInline     thrpt    5   5792990.7 ** 1220873544.8
+
 ```
 
 ### Functional
-```
-Benchmark                                        Mode  Cnt        Score         Error  Units
-FixBuzzBenchmark.testScalaZFunctional           thrpt    5   353630.137 ±  125385.402  ops/s
-FixBuzzBenchmark.testScalaFunctional            thrpt    5   299938.096 ±   14362.987  ops/s
-FixBuzzBenchmark.testKotlinFunctional           thrpt    5   209749.830 ±   85171.772  ops/s
-FixBuzzBenchmark.testJavaFunctionalVavr         thrpt    5   181992.684 ±    5319.046  ops/s
-FixBuzzBenchmark.testKotlinFunctionalMapReduce  thrpt    5   171711.141 ±   62925.735  ops/s
-FixBuzzBenchmark.testJavaFunctional             thrpt    5   112316.685 ±   15388.262  ops/s
-FixBuzzBenchmark.testJavaFunctionalMapReduce    thrpt    5    89820.347 ±   36001.408  ops/s
-FixBuzzBenchmark.testScalaFunctionalStreams     thrpt    5    45459.175 ±    9841.524  ops/s
-FixBuzzBenchmark.testGroovyFunctional           thrpt    5    11221.808 ±    4008.804  ops/s
-```
 
+```
+Benchmark                                        Mode  Cnt       Score
+FixBuzzBenchmark.testGroovyFunctional           thrpt    5     16474.8
+FixBuzzBenchmark.testScalaFunctionalStreams     thrpt    5     49250.0
+FixBuzzBenchmark.testJavaFunctionalMapReduce    thrpt    5    109356.1
+FixBuzzBenchmark.testJavaFunctional             thrpt    5    132041.3
+FixBuzzBenchmark.testJavaFunctionalVavr         thrpt    5    276654.9
+FixBuzzBenchmark.testKotlinFunctionalMapReduce  thrpt    5    406664.1
+FixBuzzBenchmark.testScalaFunctional            thrpt    5    559828.4
+FixBuzzBenchmark.testKotlinFunctional           thrpt    5    623363.6
+FixBuzzBenchmark.testScalaZFunctional           thrpt    5    653267.0
+
+```
 
 ++++
 <br/><br/>

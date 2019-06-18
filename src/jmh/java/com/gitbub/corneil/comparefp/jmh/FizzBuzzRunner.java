@@ -5,6 +5,7 @@ import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
+import org.openjdk.jmh.runner.options.TimeValue;
 import org.openjdk.jmh.runner.options.VerboseMode;
 
 public class FizzBuzzRunner {
@@ -13,10 +14,12 @@ public class FizzBuzzRunner {
         Options opt = new OptionsBuilder()
                 .include(".*" + FixBuzzBenchmark.class.getSimpleName() + ".*")
                 .verbosity(VerboseMode.EXTRA)
-                .warmupIterations(5)
+                .warmupIterations(3)
                 .measurementIterations(5)
+                .warmupTime(TimeValue.seconds(3))
+                .measurementTime(TimeValue.seconds(5))
                 .mode(Mode.Throughput)
-                .jvmArgsPrepend("-XX:+AggressiveOpts")
+                // .jvmArgsPrepend("-XX:+AggressiveOpts")
                 .forks(1)
                 .threads(1)
                 .build();
