@@ -12,7 +12,7 @@ class FizzBuzzKotlinFunctionalMapReduce {
                 Replacement({ i -> i % 5 == 0 }, "Buzz")
         )
 
-        fun fizzBuzz(i: Int): String {
+        private fun fizzBuzz(i: Int): String {
             val rules = fizzBuzzRules.filter { r -> r.rule(i) }.map { r -> r.output }
             return if (rules.isEmpty()) i.toString()
                     else rules.reduce { acc, s -> acc + s }

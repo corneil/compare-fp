@@ -20,7 +20,7 @@ public class FizzBuzzRunner {
                 .measurementTime(TimeValue.seconds(5))
                 .mode(Mode.Throughput)
                 // .jvmArgsPrepend("-XX:+AggressiveOpts")
-                .forks(1)
+                .forks(0)
                 .threads(1)
                 .build();
         new Runner(opt).run();

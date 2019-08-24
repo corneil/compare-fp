@@ -4,11 +4,11 @@ import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.function.Predicate;
+import java.util.function.IntPredicate;
 import java.util.stream.IntStream;
 
 public class FizzBuzzFunctionalMapReduce {
-    private static List<Replacement> fizzBuzzRules =
+    private static final List<Replacement> fizzBuzzRules =
             Collections.unmodifiableList(Arrays.asList(
                     new Replacement(i -> i % 3 == 0, "Fizz"),
                     new Replacement(i -> i % 5 == 0, "Buzz")
@@ -29,14 +29,14 @@ public class FizzBuzzFunctionalMapReduce {
     public static void functionalMapReduce(final PrintWriter writer) {
         IntStream.range(1, 101)
                 .mapToObj(FizzBuzzFunctionalMapReduce::fizzBuzz)
-                .forEach(i -> writer.println(i));
+                .forEach(writer::println);
     }
 
     private static class Replacement {
-        final Predicate<Integer> when;
+        final IntPredicate when;
         final String output;
 
-        Replacement(Predicate<Integer> when, String output) {
+        Replacement(IntPredicate when, String output) {
             this.output = output;
             this.when = when;
         }
