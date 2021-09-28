@@ -9,10 +9,8 @@ import java.util.stream.IntStream;
 
 public class FizzBuzzFunctionalMapReduce {
     private static final List<Replacement> fizzBuzzRules =
-            Collections.unmodifiableList(Arrays.asList(
-                    new Replacement(i -> i % 3 == 0, "Fizz"),
-                    new Replacement(i -> i % 5 == 0, "Buzz")
-            ));
+            List.of(new Replacement(i -> i % 3 == 0, "Fizz"),
+                    new Replacement(i -> i % 5 == 0, "Buzz"));
 
     private static String fizzBuzz(final Integer i) {
         return replace(i);
@@ -22,12 +20,12 @@ public class FizzBuzzFunctionalMapReduce {
         return fizzBuzzRules.stream()
                 .filter(r -> r.when.test(i))
                 .map(r -> r.output)
-                .reduce(String::concat)
-                .orElse(Integer.toString(i));
+                .reduce((s1, s2) -> s1 + s2)
+                .orElse(i.toString());
     }
 
     public static void functionalMapReduce(final PrintWriter writer) {
-        IntStream.range(1, 101)
+        IntStream.rangeClosed(1, 100)
                 .mapToObj(FizzBuzzFunctionalMapReduce::fizzBuzz)
                 .forEach(writer::println);
     }
