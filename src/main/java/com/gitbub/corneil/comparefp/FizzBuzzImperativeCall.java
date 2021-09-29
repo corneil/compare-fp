@@ -17,7 +17,7 @@ public class FizzBuzzImperativeCall {
         } else if (i % 5 == 0) {
             return "Buzz";
         } else {
-            return Integer.toString(i);
+            return "" + i;
         }
     }
 }

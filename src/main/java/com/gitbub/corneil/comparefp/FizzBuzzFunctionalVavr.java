@@ -16,7 +16,7 @@ public class FizzBuzzFunctionalVavr {
             );
 
     public static void functional(final PrintWriter writer) {
-        List.range(1, 101)
+        List.rangeClosed(1, 100)
                 .forEach(i -> writer.println(fizzBuzz(i)));
     }
 
