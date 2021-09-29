@@ -18,7 +18,7 @@ import org.openjdk.jmh.annotations.State;
 import java.io.PrintWriter;
 
 @State(value = Scope.Thread)
-public class FixBuzzBenchmark {
+public class FizzBuzzBenchmark {
 	private PrintWriter blackHole;
 
 	@Setup
